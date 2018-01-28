@@ -1,0 +1,565 @@
+
+#logo {
+    margin-top: 8%;
+    margin-left: 4%;}
+
+#titelschrift {
+    margin-top: -6%;}
+
+/*Warenkorb Icon*/
+#warenkorbmenge, #warenkorbleer {
+    z-index: 1;}
+
+#mengegesamt,#warenkorbmenge, #titelbild, #warenkorbleer {
+    position: absolute;}
+
+#mengegesamt, #warenkorbmenge, #warenkorbleer{
+    z-index: 2;}
+
+/*Porilf & warenkorb hover*/
+#profil {
+    background-image: url("bilder/profil1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#profil:hover {
+    background-image: url("bilder/profilhover.png");}
+
+#warenkorb {
+    background-image: url("bilder/cart1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#warenkorb:hover {
+    background-image: url("bilder/carthover.png");
+    background-size: 90% 90%;}
+
+#warenkorbvoll {
+    background-image: url("bilder/cartvoll.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#warenkorbvoll:hover {
+    background-image: url("bilder/cartvollhover.png");}
+
+#warenkorbleer {
+    margin-left: -2em;
+    min-height: 2em;
+    min-width: 10em;
+    padding-left: 1em;
+    background-color: white;
+    color: black;
+    font-size: 16px;}
+
+#warenkorbmenge {
+    margin-left: -5em;
+    min-height: 2em;
+    min-width: 15em;
+    background-color: white;
+    color: black;
+    font-size: 16px;}
+
+.mengeinhaltleer {
+    margin-left: 3%;
+    margin-top: 3%;}
+
+#mengegesamt {
+    min-width: 2em;
+    min-height: 2em;
+    padding-left: 5%;
+    padding-top: 5%;
+    margin-top: -20%;
+    margin-left: 3em;
+    font-weight: bold;
+    font-size: 18px;}
+
+
+
+/*Body*/
+body {
+    font-family: "Helvetica";
+    font-size: 160%;
+    background-color: white;
+    color: black;
+    position: relative;}
+
+/*Titeblild responsive*/
+.img-responsive {
+    max-width: 100%;}
+
+/*Layout für alle Seiten*/
+.layout {
+    margin-left: 8%;
+    margin-right: 8%;}
+
+/*Links*/
+a {
+    color: black;
+    text-decoration: none;}
+
+a:hover {
+    color: grey;}
+
+/*Buttons*/
+/*Rosa Button*/
+.rosabutton {
+    background-color: #f1a2c3;
+    color: black;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 2px #888;}
+.rosabutton:hover {
+    background-color: #f191b7;
+    cursor: pointer;
+    box-shadow: 0 3px 3px #888;}
+/*Brauner Button*/
+.produktbutton {
+    background-color: #e2c599;
+    color: black;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 2px #888;}
+.produktbutton:hover {
+    background-color: #d9bd82;
+    curser: pointer;
+    box-shadow: 0 3px 3px #888;}
+/* Backend-Button*/
+.bearbeitenbutton{
+    background-color: #f191b7;
+    color: black;
+    font-weight: normal;
+    height: 35px;}
+.loeschenbutton{
+    background-color: lightgray;
+    color: black;
+    font-weight: normal;
+    height: 35px;}
+button {
+    background-color: white;}
+
+/*Trennstrich, Verwendung: Bestellung erfolgreich*/
+.strich {
+    border-width: 0px 0px 0px 1px;
+    border-bottom: medium;
+    border-style: solid;
+    border-color: black;}
+
+/*Ganzes Menü*/
+.navi {
+    line-height: 60px;
+    text-align: center;
+    padding-top: 1%}
+
+ul, li {
+    list-style-type: none;
+    text-decoration: none;
+}
+/*Dropdown header*/
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+}
+.dropdownlinks2 {
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-left: 120%;
+}
+.dropdownlinks2 a {
+    color: black;
+    padding-right: 20%;
+    text-decoration: none;
+    display: block;
+}
+
+/* Dropdownlinks farbe ändern bei hover */
+.dropdownlinks2 a:hover {
+    background-color: white;
+    color: hotpink;
+}
+
+/* Dropdown Menü zeigen bei hover */
+.dropdown2:hover .dropdownlinks2 {
+    display: block;
+}
+
+
+
+/*Dropdown-Navi-Leiste Produkte*/
+/* Style The Dropdown Button */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdownlinks verstecken */
+.dropdownlinks {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Dropdownlinks stylen*/
+.dropdownlinks a {
+    color: black;
+    padding: 0px 150px;
+    text-decoration: none;
+    display: block;
+}
+/* Dropdownlinks farbe ändern bei hover */
+.dropdownlinks a:hover {
+    background-color: white;
+    color: hotpink;}
+
+/* Dropdown Menü zeigen bei hover */
+.dropdown:hover .dropdownlinks {
+    display: block;}
+
+
+
+/*Ganzes Menü*/
+ul {
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;}
+
+ul li {
+    display: block;
+    background-color: #ffeae8;
+    text-decoration: none;}
+/*für donuts extr*/
+ul li:hover {
+    text-decoration: none;
+    background-color: white;
+    transition: .3s background-color;
+    text-decoration: none;
+    color: hotpink;}
+
+ul li a{
+    display: block;
+    background-color: #ffeae8;
+    text-decoration: none;}
+
+ul li a:hover {
+    text-decoration: none;
+    background-color: white;
+    transition: .3s background-color;
+    text-decoration: none;
+    color: hotpink;}
+
+/*HOME*/
+.umrandung_eins {
+    border-style: solid;
+    border-width: 2px;
+    height: auto;
+    min-height: 22em;
+    float: left;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding-bottom: 1em;}
+.umrandung_eins a {color: #ff3585;}
+.umrandung_zwei {
+    border-style: solid;
+    border-width: 2px;
+    height: auto;
+    min-height: 28em;
+    float: left;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding-bottom: 1em;}
+.umrandung_zwei a {color: grey;}
+
+
+
+/*Über Uns*/
+.ueberuns {
+    margin-right: 4em;
+        margin-left: 3em;}
+.ueberuns h1 {
+    font-weight: bolder;
+        font-size: 55px;
+        font-family: "Amatic SC";}
+.vorteileheader {font-weight: bolder;}
+.vorteile {margin-left: 2em;}
+.chef {text-align: center;}
+.eye {text-align: center;}
+.delivery {text-align: center;}
+.calendar {text-align: center;
+        padding-left: 0em;}
+.money {text-align: center;
+        padding-right: 0em;}
+#standort {
+    border-style: solid;
+    border-color: white;
+    height: auto;
+    -webkit-box-shadow: 0 1px 2px #888;
+    margin-left: 5em;
+    float: left;}
+
+
+
+/*Kontakt*/
+.kontakt h1 {font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+
+
+
+/*Backend-Formulare Nutzererstellung, Login, Registrierung*/
+.accountheader {text-align: center;}
+.accountheader h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+label {text-align: left;}
+
+/*Login*/
+.loginformular h2 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+.loginformular {margin-top: 120px;
+    margin-left: 25px;
+    padding-top: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 1px;
+    border-color: lightpink;
+    height: auto;
+    width: 400px;
+    -webkit-box-shadow: 0 5px 5px #888;
+    position: absolute;
+    background-color: #fafafa;}
+.loginformular input {height: 35px;}
+
+/* Registrierung*/
+#registerlogo {
+    text-align: right;}
+.registerformular .accountheader h2 {
+    text-align: left;
+    margin-left: -2em;
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+.registerformular {
+    margin-top: 40px;
+    margin-left: 3em;
+    padding: 1em 13em;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 1px;
+    border-color: lightpink;
+    height: auto;
+    width: 60em;
+    position: absolute;
+    background-color: white;
+    -webkit-box-shadow: 0 2px 2px #888}
+.registereingabe{
+    padding: 0em 2em;}
+.registereingabe input {
+    height: 30px;}
+.registerhinweis {
+    margin-right: -7em;
+    font-size: 83%;}
+.registerhinweis a {
+    color: grey;}
+
+/*Nutzererstellung*/
+.nutzererstellung .accountheader h2 {text-align: left;
+    margin-left: 5.5em;
+    font-weight: 500;}
+.nutzererstellungformular {text-align: left;
+    margin-left: 12em;}
+.nutzererstellungformular input {height: 30px;}
+
+
+
+/*Footer*/
+footer {
+    background-color: black;
+    color: white;
+    list-style-type: none;}
+.footertotal {
+    margin-left: 6%;}
+footer .footertotal .footerleft li {
+    background-color: black;
+    color: white;}
+footer .footertotal .footerleft li:hover a {
+    text-decoration: none;
+    color: white;}
+.footerleft a {color: white;}
+.footerbottom {background-color: black;
+                color: white;}
+.footerbottom a {color: white;}
+/* Footer-Seiten*/
+.footerinfo {text-align: center;}
+.footerinfo h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+
+
+/*BACKEND*/
+/* Anzeige Adminname im Header*/
+#profil_info {
+    text-align: center;}
+/* Produkte bearbeiten*/
+input, textarea {
+    color: black;}
+/*Bestellübersicht*/
+.bestelluebersicht h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+/*Produkte bearbeiten*/
+#donuts h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+#donutsbearbeiten h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";
+    text-align: center;}
+/* Produkte löschen*/
+.loeschenumrandung {
+    border-style: solid;
+    border-width: 2px;
+    height: auto;
+    float: left;}
+
+
+select {background-color: white;}
+
+
+/*_______ Navi für Handy____________________________________________________________*/
+
+@media (max-width: 991px) {
+    .dropdown {
+        position: relative;
+        display: inline-block;}
+
+    /* Dropdownlinks verstecken */
+    .dropdownlinks {
+        display: none;
+        position: absolute;
+        min-width: 100px;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+        z-index: 1;}
+
+    /* Dropdownlinks stylen*/
+    .dropdownlinks a {
+        color: black;
+        padding: 3px 190px;
+        text-decoration: none;
+        display: block;}
+
+    /* Dropdownlinks farbe ändern bei hover */
+    .dropdownlinks a:hover {
+        background-color: white;
+        color: hotpink;}
+
+    /* Dropdown Menü zeigen bei hover */
+    .dropdown:hover .dropdownlinks {
+        display: block;}
+
+
+
+    /*Ganzes Menü*/
+    ul {
+        line-height: 60px;
+        text-align: center;
+        font-size: 20px;
+        text-decoration: none;}
+
+    ul li {
+        display: block;
+        background-color: #ffeae8;
+        text-decoration: none;}
+
+    ul li:hover {
+        text-decoration: none;
+        background-color: white;
+        transition: .3s background-color;
+        text-decoration: none;
+        color: hotpink;}
+
+    ul li a{
+        display: block;
+        background-color: #ffeae8;
+        text-decoration: none;}
+
+    ul li a:hover {
+        text-decoration: none;
+        background-color: white;
+        transition: .3s background-color;
+        text-decoration: none;
+        color: hotpink;}
+
+    #logo {
+        width: 10%;
+        margin-top: 8%;
+        margin-left: 4%;
+    }
+    #titelschrift {
+        width: 100%;
+        margin-top: -6%;
+    }
+
+    /*Warenkorb Icon*/
+    #warenkorbmenge, #warenkorbleer {
+        z-index: 1;  }
+
+    #mengegesamt,#warenkorbmenge, #titelbild, #warenkorbleer {
+        position: absolute;}
+
+    #mengegesamt, #warenkorbmenge{
+        z-index: 2;
+    }
+
+    /*Porilf & warenkorb hover*/
+    #profil {
+        background-image: url("bilder/profil1.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        width: 4em;
+        height: 4em;
+    }
+    #profil:hover {
+        background-image: url("bilder/profilhover.png");
+    }
+
+    #warenkorb {
+        background-image: url("bilder/cart1.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        width: 4em;
+        height: 4em;
+    }
+    #warenkorb:hover {
+        background-image: url("bilder/carthover.png");
+        background-size: 90% 90%;
+    }
+
+    #warenkorbvoll {
+        background-image: url("bilder/cartvoll.png");
+        background-size: 90% 90%;
+        background-repeat: no-repeat;
+        width: 4em;
+        height: 4em;
+    }
+    #warenkorbvoll:hover {
+        background-image: url("bilder/cartvollhover.png");
+    }
+}
