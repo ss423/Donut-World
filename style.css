@@ -1,94 +1,3 @@
-#logo {
-    margin-top: 8%;
-    margin-left: 4%;
-}
-#titelschrift {
-    margin-top: -6%;
-}
-
-
-/*Warenkorb Icon*/
-#warenkorbmenge, #warenkorbleer {
-    z-index: 1;  }
-
-#mengegesamt,#warenkorbmenge, #titelbild, #warenkorbleer {
-    position: absolute;}
-
-#mengegesamt, #warenkorbmenge, #warenkorbleer{
-    z-index: 2;
-}
-#warenkorbleer {
-    margin-left: -2em;
-    min-height: 2em;
-    min-width: 10em;
-    padding-left: 1em;
-    background-color: white;
-    color: black;
-    font-size: 16px;
-}
-#warenkorbmenge {
-    margin-left: -5em;
-    min-height: 2em;
-    min-width: 15em;
-    background-color: white;
-    color: black;
-    font-size: 16px;
-}
-.mengeinhaltleer {
-    margin-left: 3%;
-    margin-top: 3%;
-}
-#mengegesamt {
-    min-width: 2em;
-    min-height: 2em;
-    padding-left: 5%;
-    padding-top: 5%;
-    margin-top: -20%;
-    margin-left: 3em;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-
-
-/*Porilf & warenkorb hover*/
-#profil {
-    background-image: url("bilder/profil1.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;
-}
-#profil:hover {
-    background-image: url("bilder/profilhover.png");
-}
-
-#warenkorb {
-    background-image: url("bilder/cart1.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;
-}
-#warenkorb:hover {
-    background-image: url("bilder/carthover.png");
-    background-size: 90% 90%;
-}
-
-#warenkorbvoll {
-    background-image: url("bilder/cartvoll.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;
-}
-#warenkorbvoll:hover {
-    background-image: url("bilder/cartvollhover.png");
-}
-
-
-
-
 /*Body*/
 body {
     font-family: "Helvetica";
@@ -97,9 +6,7 @@ body {
     color: black;
     position: relative;}
 
-
-
-/*Titeblild responsive*/
+/*Bilder responsive*/
 .img-responsive {
     max-width: 100%;}
 
@@ -108,16 +15,21 @@ body {
     margin-left: 8%;
     margin-right: 8%;}
 
-
-
 /*Links*/
 a {
     color: black;
     text-decoration: none;}
-
 a:hover {
     color: grey;}
 
+/*Logo*/
+#logo {
+    margin-top: 8%;
+    margin-left: 4%;}
+
+/* Titelschrift Donut World*/
+#titelschrift {
+    margin-top: -6%;}
 
 
 /*Buttons*/
@@ -159,6 +71,7 @@ a:hover {
 button {
     background-color: white;}
 
+
 /*Trennstrich, Verwendung: Bestellung erfolgreich*/
 .strich {
     border-width: 0px 0px 0px 1px;
@@ -168,93 +81,105 @@ button {
 
 
 
+/*Warenkorb Icon*/
+#warenkorbmenge, #warenkorbleer {
+    z-index: 1;}
+
+#mengegesamt,#warenkorbmenge, #titelbild, #warenkorbleer {
+    position: absolute;}
+
+#mengegesamt, #warenkorbmenge, #warenkorbleer{
+    z-index: 2;}
+
+#warenkorbleer {
+    margin-left: -2em;
+    min-height: 2em;
+    min-width: 10em;
+    padding-left: 1em;
+    background-color: white;
+    color: black;
+    font-size: 16px;}
+
+#warenkorbmenge {
+    margin-left: -5em;
+    min-height: 2em;
+    min-width: 15em;
+    background-color: white;
+    color: black;
+    font-size: 16px;}
+
+.mengeinhaltleer {
+    margin-left: 3%;
+    margin-top: 3%;}
+
+#mengegesamt {
+    min-width: 2em;
+    min-height: 2em;
+    padding-left: 5%;
+    padding-top: 5%;
+    margin-top: -20%;
+    margin-left: 3em;
+    font-weight: bold;
+    font-size: 18px;}
+
+
+
+/*Profil & Warenkorb Hover*/
+#profil {
+    background-image: url("bilder/profil1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#profil:hover {
+    background-image: url("bilder/profilhover.png");}
+
+#warenkorb {
+    background-image: url("bilder/cart1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#warenkorb:hover {
+    background-image: url("bilder/carthover.png");
+    background-size: 90% 90%;}
+
+#warenkorbvoll {
+    background-image: url("bilder/cartvoll.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;}
+
+#warenkorbvoll:hover {
+    background-image: url("bilder/cartvollhover.png");}
+
+
+
 /*Ganzes Menü*/
 .navi {
     line-height: 60px;
     text-align: center;
     padding-top: 1%}
 
-ul, li {
-    list-style-type: none;
-    text-decoration: none;
-}
-
-
-/* Dropdown Menü zeigen bei hover Oben*/
-.dropdown2:hover .dropdownlinks2 {
-    display: block;
-}
-.dropdownlinks2 {
-    display: none;
-    position: absolute;
-    margin-right: -50px;
-    min-width: 40px;
-    min-height: 30px;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;}
-.dropdownlinks2 a {
-    color: black;
-    margin-left: -120px;
-    padding: 3px 70px;
-    text-decoration: none;
-    display: block;}
-
-/* Dropdownlinks farbe ändern bei hover */
-.dropdownlinks2 a:hover {
-    background-color: white;
-    color: hotpink;}
-
-/* Dropdown Menü zeigen bei hover */
-.dropdown:hover .dropdownlinks2 {
-    display: block;}
-
-
-/*Dropdown-Navi-Leiste Produkte*/
-/* Style The Dropdown Button */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-/* Dropdownlinks verstecken */
-.dropdownlinks {
-    display: none;
-    position: absolute;
-    min-width: 100px;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-/* Dropdownlinks stylen*/
-.dropdownlinks a {
-    color: black;
-    margin-left: -40px;
-    padding: 0px 170px;
-    text-decoration: none;
-    display: block;
-}
-/* Dropdownlinks farbe ändern bei hover */
-.dropdownlinks a:hover {
-    background-color: white;
-    color: hotpink;}
-
-/* Dropdown Menü zeigen bei hover */
-.dropdown:hover .dropdownlinks {
-    display: block;}
-
-
-
-/*Ganzes Menü*/
 ul {
     line-height: 60px;
     text-align: center;
     font-size: 20px;
     text-decoration: none;}
 
+ul, li {
+    list-style-type: none;
+    text-decoration: none;}
+
 ul li {
     display: block;
     background-color: #ffeae8;
     text-decoration: none;}
-/*für donuts extr*/
+
+/*Für Donuts extra*/
 ul li:hover {
     text-decoration: none;
     background-color: white;
@@ -273,6 +198,65 @@ ul li a:hover {
     transition: .3s background-color;
     text-decoration: none;
     color: hotpink;}
+
+/* Dropdown Menü zeigen bei hover Oben*/
+.dropdown2:hover .dropdownlinks2 {
+    display: block;}
+.dropdownlinks2 {
+    display: none;
+    position: absolute;
+    margin-right: -50px;
+    min-width: 40px;
+    min-height: 30px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;}
+.dropdownlinks2 a {
+    color: black;
+    margin-left: -120px;
+    padding: 3px 70px;
+    text-decoration: none;
+    display: block;}
+
+/* Dropdownlinks Farbe ändern bei hover */
+.dropdownlinks2 a:hover {
+    background-color: white;
+    color: hotpink;}
+
+/* Dropdown Menü zeigen bei hover */
+.dropdown:hover .dropdownlinks2 {
+    display: block;}
+
+/*Dropdown-Navi-Leiste Produkte*/
+.dropdown {
+    position: relative;
+    display: inline-block;}
+
+/* Dropdownlinks verstecken */
+.dropdownlinks {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;}
+
+/* Dropdownlinks stylen*/
+.dropdownlinks a {
+    color: black;
+    margin-left: -40px;
+    padding: 0px 170px;
+    text-decoration: none;
+    display: block;}
+
+/* Dropdownlinks farbe ändern bei hover */
+.dropdownlinks a:hover {
+    background-color: white;
+    color: hotpink;}
+
+/* Dropdown Menü zeigen bei hover */
+.dropdown:hover .dropdownlinks {
+    display: block;}
+
+
 
 /*HOME*/
 .umrandung_eins {
@@ -426,19 +410,19 @@ footer .footertotal .footerleft li:hover a {
     font-family: "Amatic SC";}
 
 
+
 /*BACKEND*/
 /* Anzeige Adminname im Header*/
 #profil_info {
     text-align: center;}
-/* Produkte bearbeiten*/
-input, textarea {
-    color: black;}
 /*Bestellübersicht*/
 .bestelluebersicht h1 {
     font-weight: bolder;
     font-size: 55px;
     font-family: "Amatic SC";}
 /*Produkte bearbeiten*/
+input, textarea {
+    color: black;}
 #donuts h1 {
     font-weight: bolder;
     font-size: 55px;
