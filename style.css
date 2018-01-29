@@ -461,7 +461,7 @@ select {background-color: white;}
 
 /*_______ Navi für Handy____________________________________________________________*/
 
-@media (max-width: 991px) {
+@media (max-width: 1080px) {
     .dropdown {
         position: relative;
         display: inline-block;}
@@ -557,6 +557,9 @@ select {background-color: white;}
     }
 
     #warenkorb {
+        position: absolute;
+        margin-top: -60%;
+        margin-left: 80%;
         background-image: url("bilder/cart1.png");
         background-size: 90% 90%;
         background-repeat: no-repeat;
@@ -564,11 +567,17 @@ select {background-color: white;}
         height: 4em;
     }
     #warenkorb:hover {
+        position: absolute;
+        margin-top: -60%;
+        margin-left: 80%;
         background-image: url("bilder/carthover.png");
         background-size: 90% 90%;
     }
 
     #warenkorbvoll {
+        position: absolute;
+        margin-top: -60%;
+        margin-left: 80%;
         background-image: url("bilder/cartvoll.png");
         background-size: 90% 90%;
         background-repeat: no-repeat;
@@ -576,6 +585,9 @@ select {background-color: white;}
         height: 4em;
     }
     #warenkorbvoll:hover {
+        position: absolute;
+        margin-top: -60%;
+        margin-left: 80%;
         background-image: url("bilder/cartvollhover.png");
     }
 }

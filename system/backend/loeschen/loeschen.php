@@ -30,10 +30,11 @@ if ($zeile = $stmt->fetchObject()) {
         <br><br>
         
         <div class='row loeschenumrandung'>
-            <div class='col-sm-4'>
-                <img src='../../bilder/".$zeile->ean.".".$zeile->ende."' width='50%' class='img-responsive' alt='Bild: ".$zeile->donutname."' title='".$zeile->donutname."'>
+         <div class='col-sm-1'> </div>
+            <div class='col-sm-3'>
+                <img src='../../bilder/".$zeile->ean.".".$zeile->ende."' width='100%' class='img-responsive' alt='Bild: ".$zeile->donutname."' title='".$zeile->donutname."'>
             </div>
-            
+           
             <div class='col-sm-8'>
                 <div class='row'>
                     <div class='col-sm-12'>
