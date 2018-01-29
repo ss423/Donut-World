@@ -10,7 +10,7 @@ echo "
 <br>
 
 <div class='row'>
-    <div class='col-sm-6'>
+    <div class='col-sm-5'>
         <div id='adresse'>
             <h2>Adresse:</h2><br>
             <h4>Donut World GmbH </h4>
@@ -21,7 +21,8 @@ echo "
             E-Mail-Adresse: DonutWorld@gmail.com <br>
         </div>
     </div>
-    <div class='col-sm-6'>
+    
+    <div class='col-sm-7'>
         <div id='ansprechpartner'>
             <h2>Ansprechpartner:</h2><br>
             Theresa Veit Geschäftsführerin <br>
