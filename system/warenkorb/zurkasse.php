@@ -23,40 +23,47 @@ $benutzerRow = $query->fetch_assoc();
 <body>
 <form action="system/warenkorb/warenkorbaktionen.php" method="post">
 
+    <br><br>
+
     <div class="row">
         <div class="col-sm-6">
-            <h4>Lieferadresse</h4>
-            <p><?php echo $benutzerRow['vorname']; $benutzerRow['nachname']; ?></p>
-            <p><?php echo $benutzerRow['straße']; $benutzerRow['hausnummer'];?></p>
-            <p><?php echo $benutzerRow['plz']; $benutzerRow['ort'];?></p>
+            <h2>Lieferadresse</h2><br>
+            <p><?php echo $benutzerRow['vorname'], $benutzerRow['nachname']; ?></p>
+            <p><?php echo $benutzerRow['straße'], $benutzerRow['hausnummer'];?></p>
+            <p><?php echo $benutzerRow['plz'], $benutzerRow['ort'];?></p>
         </div>
+
         <div class="col-sm-6">
-            <h4>Zahlungsinformationen</h4>
-            <input type="radio" name="zahlungsinfo" value="PayPal">PayPal<br>
-            <input type="radio" name="zahlungsinfo" value="Nachnahme" checked>Nachnahme<br>
+            <h2>Zahlungsinformationen</h2><br>
+            <i>*Bitte Zahlungsart auswählen (Infos finden Sie <a href="index.php?page=versandundzahlung" style="color: grey">hier</a>):</i><br>
+            <h4><input type="radio" name="zahlungsinfo" value="PayPal">PayPal</h4>
+            <h4><input type="radio" name="zahlungsinfo" value="Nachnahme" checked>Nachnahme</h4><br>
         </div>
     </div>
 
+    <br>
+
     <div class="row">
         <div class="col-sm-12">
-            <h4>Deine Bestellungen</h4>
+            <h2>Deine Bestellungen</h2>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-sm-3">
             <!--Bild -->
         </div>
         <div class="col-sm-6">
-            Artikel
+            <h3>Artikel</h3>
         </div>
         <div class="col-sm-1">
-            Preis
+            <h3>Preis</h3>
         </div>
         <div class="col-sm-1">
-            Menge
+            <h3>Menge</h3>
         </div>
         <div class="col-sm-1">
-            Endpreis
+            <h3>Endpreis</h3>
         </div>
     </div>
     <?php
@@ -97,13 +104,16 @@ $benutzerRow = $query->fetch_assoc();
             <div class="col-sm-10">
             </div>
             <div class="col-sm-1">
-                Summe:
+                <b>Summe:</b>
             </div>
             <div class="col-sm-1">
                 <?php echo '€'.$warenkorb->gesamt().' EURO'; ?>
             </div>
         </div>
     <?php } ?>
+
+    <br><br><br>
+
     <div class="row">
         <div class="col-sm-2">
                 <button href="index.php?page=alledonuts" class="produktbutton">Gönn dir noch einen Donut</button>

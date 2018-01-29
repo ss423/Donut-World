@@ -4,7 +4,16 @@ include "config.php";
 $nachname=$_SESSION["nutzer"]["nachname"]; //rauslesen Nutzer Nachname
 
 echo"
-<h1>Meine Daten</h1>
+<div class='row'>
+    <div class='col-sm-12 produkte'>
+        <h1>Meine Seite</h1>
+    </div>
+</div>
+
+<br>
+
+<h2>Meine Daten</h2>
+<br>
 ";
 
 echo "
@@ -20,7 +29,7 @@ echo "
         $id=$_SESSION["nutzer"]["id"];
 
 echo"
-<h1>Meine Bestellungen</h1>
+<h2>Meine Bestellungen</h2>
 ";
 
 //rauslesen Bestellte Artikel
