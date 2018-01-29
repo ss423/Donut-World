@@ -11,7 +11,16 @@ if(!$stmt->execute()) {
     die();
 }
 
-echo "<h1>Ungefüllte Donuts</h1>";
+echo "
+<div class='row'>
+    <div class='col-sm-12 produkte'>
+        <h1>Ungefüllte Donuts</h1>
+    </div>
+</div>
+
+<br>
+";
+
 $ad=1;
 $anzahldonuts=$stmt->rowCount();
 
