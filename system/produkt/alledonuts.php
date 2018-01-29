@@ -13,10 +13,12 @@ if(!$stmt->execute()) {
 
 echo "
 <div class='row'>
-    <div class='col-sm-12'>
+    <div class='col-sm-12 produkte'>
         <h1>Alle Donuts</h1>
     </div>
 </div>
+
+<br>
 ";
 
 $ad=1;

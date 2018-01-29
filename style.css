@@ -309,8 +309,17 @@ ul li a:hover {
 
 
 
+/* Produkte */
+.produkte h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+
+
+
 /*Kontakt*/
-.kontakt h1 {font-weight: bolder;
+.kontakt h1 {
+    font-weight: bolder;
     font-size: 55px;
     font-family: "Amatic SC";}
 

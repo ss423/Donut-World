@@ -46,40 +46,50 @@ echo "
     </div>    
 </div>
 <form name='nachricht' method='post' action='index.php?page=kontaktsenden' > <!--Kontaktformular über post -->
+
 <div class='row'>
-  <div class='col-sm-2'>
-    </div>
     <div class='col-sm-2'>
         Betreff *:
     </div>
     <div class='col-sm-8'>
-        <input type='text' name='betreff' maxlength='50' size='30'>
+        <input type='text' name='betreff' maxlength='50' size='30' placeholder='Betreff'>
     </div>
-</div>
-<div class='row'>
     <div class='col-sm-2'>
     </div>
+</div>
+
+<br>
+
+<div class='row'>
     <div class='col-sm-2'>
         E-Mail-Adresse *:
     </div>
     <div class='col-sm-8'>
-        <input type='text' name='email' maxlength='80' size='30'>
+        <input type='text' name='email' maxlength='80' size='30' placeholder='E-Mail'>
     </div>
-</div>
-<div class='row'>
     <div class='col-sm-2'>
     </div>
+</div>
+
+<br>
+
+<div class='row'>
     <div class='col-sm-2'>
         Nachricht *:
     </div>
     <div class='col-sm-8'>
-    <textarea name='nachricht' maxlength='1000' cols='70' rows='6'></textarea>
+    <textarea name='nachricht' maxlength='1000' cols='70' rows='6' placeholder='Nachricht schreiben...'></textarea>
+    </div>
+    <div class='col-sm-2'>
     </div>
 </div>
+
+<br>
+
 <div class='row'>
-    <div class='col-sm-4'>
+    <div class='col-sm-2'>
     </div>
-    <div class='col-sm-8'>
+    <div class='col-sm-10'>
         <input type='submit' value='senden' class='bearbeitenbutton'>
     </div>
 </div>
