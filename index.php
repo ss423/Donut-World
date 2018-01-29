@@ -24,7 +24,7 @@ echo"
 <div class='header'>
    <div class='row'>
             <div class='col-sm-12'>
-                <img class='img-responsive' src='bilder/titel1.jpg' id='titelbild' style='height: auto;' alt='Titelbild'>
+                <img class='img-responsive' src='bilder/titel1.jpg' id='titelbildoben' height='100%' alt='Titelbild'>
             </div>
     </div>
     <div class='row'>
