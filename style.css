@@ -546,6 +546,7 @@ select {background-color: white;}
 
     /*Porilf & warenkorb hover*/
     #profil {
+        position: absolute;
         background-image: url("bilder/profil1.png");
         background-size: 90% 90%;
         background-repeat: no-repeat;
