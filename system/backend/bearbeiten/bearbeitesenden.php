@@ -25,7 +25,7 @@ if (!empty($donutname) && !empty($beschreibung) && !empty($fuellung) && !empty($
 
             $allowed_extensions = array('jpg','png','jpeg','gif'); //nur jpg bilder werden angenommen
             if (!in_array($extension, $allowed_extensions)) {   //wenn die Dateiendung nicht jpg ist
-                die("Ungültige Dateiendung.");
+                die("Ungültige Dateiendung. Es sind nur png, jpg, jpeg und gif-Dateien erlaubt!");
             }
 
             $new_path = $upload_folder . $filename . '.' . $extension; //pfad wird gesetzt

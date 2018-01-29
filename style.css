@@ -1,53 +1,22 @@
-
 #logo {
     margin-top: 8%;
-    margin-left: 4%;}
-
+    margin-left: 4%;
+}
 #titelschrift {
-    margin-top: -6%;}
+    margin-top: -6%;
+}
+
 
 /*Warenkorb Icon*/
 #warenkorbmenge, #warenkorbleer {
-    z-index: 1;}
+    z-index: 1;  }
 
 #mengegesamt,#warenkorbmenge, #titelbild, #warenkorbleer {
     position: absolute;}
 
 #mengegesamt, #warenkorbmenge, #warenkorbleer{
-    z-index: 2;}
-
-/*Porilf & warenkorb hover*/
-#profil {
-    background-image: url("bilder/profil1.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;}
-
-#profil:hover {
-    background-image: url("bilder/profilhover.png");}
-
-#warenkorb {
-    background-image: url("bilder/cart1.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;}
-
-#warenkorb:hover {
-    background-image: url("bilder/carthover.png");
-    background-size: 90% 90%;}
-
-#warenkorbvoll {
-    background-image: url("bilder/cartvoll.png");
-    background-size: 90% 90%;
-    background-repeat: no-repeat;
-    width: 4em;
-    height: 4em;}
-
-#warenkorbvoll:hover {
-    background-image: url("bilder/cartvollhover.png");}
-
+    z-index: 2;
+}
 #warenkorbleer {
     margin-left: -2em;
     min-height: 2em;
@@ -55,20 +24,20 @@
     padding-left: 1em;
     background-color: white;
     color: black;
-    font-size: 16px;}
-
+    font-size: 16px;
+}
 #warenkorbmenge {
     margin-left: -5em;
     min-height: 2em;
     min-width: 15em;
     background-color: white;
     color: black;
-    font-size: 16px;}
-
+    font-size: 16px;
+}
 .mengeinhaltleer {
     margin-left: 3%;
-    margin-top: 3%;}
-
+    margin-top: 3%;
+}
 #mengegesamt {
     min-width: 2em;
     min-height: 2em;
@@ -77,7 +46,46 @@
     margin-top: -20%;
     margin-left: 3em;
     font-weight: bold;
-    font-size: 18px;}
+    font-size: 18px;
+}
+
+
+
+/*Porilf & warenkorb hover*/
+#profil {
+    background-image: url("bilder/profil1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;
+}
+#profil:hover {
+    background-image: url("bilder/profilhover.png");
+}
+
+#warenkorb {
+    background-image: url("bilder/cart1.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;
+}
+#warenkorb:hover {
+    background-image: url("bilder/carthover.png");
+    background-size: 90% 90%;
+}
+
+#warenkorbvoll {
+    background-image: url("bilder/cartvoll.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    width: 4em;
+    height: 4em;
+}
+#warenkorbvoll:hover {
+    background-image: url("bilder/cartvollhover.png");
+}
+
 
 
 
@@ -89,6 +97,8 @@ body {
     color: black;
     position: relative;}
 
+
+
 /*Titeblild responsive*/
 .img-responsive {
     max-width: 100%;}
@@ -98,6 +108,8 @@ body {
     margin-left: 8%;
     margin-right: 8%;}
 
+
+
 /*Links*/
 a {
     color: black;
@@ -105,6 +117,8 @@ a {
 
 a:hover {
     color: grey;}
+
+
 
 /*Buttons*/
 /*Rosa Button*/
@@ -152,6 +166,8 @@ button {
     border-style: solid;
     border-color: black;}
 
+
+
 /*Ganzes Menü*/
 .navi {
     line-height: 60px;
@@ -162,37 +178,35 @@ ul, li {
     list-style-type: none;
     text-decoration: none;
 }
-/*Dropdown header*/
-.dropdown2 {
-    position: relative;
-    display: inline-block;
+
+
+/* Dropdown Menü zeigen bei hover Oben*/
+.dropdown2:hover .dropdownlinks2 {
+    display: block;
 }
 .dropdownlinks2 {
     display: none;
     position: absolute;
-    min-width: 100%;
+    margin-right: -50px;
+    min-width: 40px;
+    min-height: 30px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    padding-left: 120%;
-}
+    z-index: 1;}
 .dropdownlinks2 a {
     color: black;
-    padding-right: 20%;
+    margin-left: -120px;
+    padding: 3px 70px;
     text-decoration: none;
-    display: block;
-}
+    display: block;}
 
 /* Dropdownlinks farbe ändern bei hover */
 .dropdownlinks2 a:hover {
     background-color: white;
-    color: hotpink;
-}
+    color: hotpink;}
 
 /* Dropdown Menü zeigen bei hover */
-.dropdown2:hover .dropdownlinks2 {
-    display: block;
-}
-
+.dropdown:hover .dropdownlinks2 {
+    display: block;}
 
 
 /*Dropdown-Navi-Leiste Produkte*/
@@ -213,7 +227,8 @@ ul, li {
 /* Dropdownlinks stylen*/
 .dropdownlinks a {
     color: black;
-    padding: 0px 150px;
+    margin-left: -40px;
+    padding: 0px 170px;
     text-decoration: none;
     display: block;
 }
@@ -230,6 +245,7 @@ ul, li {
 
 /*Ganzes Menü*/
 ul {
+    line-height: 60px;
     text-align: center;
     font-size: 20px;
     text-decoration: none;}
@@ -285,20 +301,20 @@ ul li a:hover {
 /*Über Uns*/
 .ueberuns {
     margin-right: 4em;
-        margin-left: 3em;}
+    margin-left: 3em;}
 .ueberuns h1 {
     font-weight: bolder;
-        font-size: 55px;
-        font-family: "Amatic SC";}
+    font-size: 55px;
+    font-family: "Amatic SC";}
 .vorteileheader {font-weight: bolder;}
 .vorteile {margin-left: 2em;}
 .chef {text-align: center;}
 .eye {text-align: center;}
 .delivery {text-align: center;}
 .calendar {text-align: center;
-        padding-left: 0em;}
+    padding-left: 0em;}
 .money {text-align: center;
-        padding-right: 0em;}
+    padding-right: 0em;}
 #standort {
     border-style: solid;
     border-color: white;
@@ -400,7 +416,7 @@ footer .footertotal .footerleft li:hover a {
     color: white;}
 .footerleft a {color: white;}
 .footerbottom {background-color: black;
-                color: white;}
+    color: white;}
 .footerbottom a {color: white;}
 /* Footer-Seiten*/
 .footerinfo {text-align: center;}

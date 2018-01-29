@@ -107,7 +107,6 @@ $email_message.="Sie haben folgende Donut/-s am ".$datum." bestellt: \n";
 $email_message.=$artikel."\n";
 $email_message.=$endpreis."\n";
 
-$headers = 'From: '.$emailempf."\r\n".          //Email Header mit Emailadresse absenders
-    'Reply-To: donutworld@gmx.de'."\r\n" .
+$headers = 'From: '.$emailempf."\r\n".          //Email Header mit Emailadresse absender
 
     @mail($email_to, $email_subject, $email_message, $headers);

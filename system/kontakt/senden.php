@@ -27,7 +27,7 @@ if(isset($_POST['email'])) {    //wenn beim Formular auf submit gedrückt wurde
     $email_message = "Neue Nachricht von Donutworld.\n\n";
 
 
-    $email_message .= "EMail Adresse: ".$email."\n"; //Emailadresse wird an Nachricht gehangen
+    $email_message .= "E-Mail Adresse: ".$email."\n"; //Emailadresse wird an Nachricht gehangen
 
     $email_message .= "Betreff : ".$betreff."\n"; //Betreff
 
@@ -36,17 +36,16 @@ if(isset($_POST['email'])) {    //wenn beim Formular auf submit gedrückt wurde
 
     $headers = 'From: '.$email."\r\n".          //Email Header mit Emailadresse absenders
 
-        'Reply-To: '.$email."\r\n";
 
-    @mail($email_to, $email_subject, $email_message, $headers); //verschickt mail
+        @mail($email_to, $email_subject, $email_message, $headers); //verschickt mail
 
     ?>
-<div class="row">
-    <div class="col-sm-12">
-        <br>Vielen Dank für Ihre Nachricht!<br>
-        Wir werden Ihnen bald schreiben.
+    <div class="row">
+        <div class="col-sm-12">
+            <br>Vielen Dank für Ihre Nachricht!<br>
+            Wir werden Ihnen bald schreiben.
+        </div>
     </div>
-</div>
 
     <?php
 

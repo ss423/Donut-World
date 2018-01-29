@@ -66,7 +66,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<h3>" . $row2["donutname"] . "</h3>";
         echo "Einzelpreis: " . $row2["preis"] . "<br>";
         echo "EAN-Code: " . $row2["ean"] . "<br>";
-        echo "Menge: " . $row2["menge"] . "<br>";
+        echo "Menge: " . $row2["menge"] . "<br><br>";
         echo "</div>
 </div>";
     }

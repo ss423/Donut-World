@@ -14,7 +14,7 @@ if (!empty($_POST["donutname"]) AND !empty($_POST["beschreibung"]) AND !empty($_
 
         $allowed_extensions = array('jpg','png','jpeg','gif');
         if (!in_array($extension, $allowed_extensions)) {
-            die("Ungültige Dateiendung.");
+            die("Ungültige Dateiendung. Es sind nur png, jpg, jpeg und gif-Dateien erlaubt!");
         }
 
         $new_path = $upload_folder . $filename . '.' . $extension;
@@ -43,7 +43,7 @@ VALUES (:donutname, :beschreibung, :preis, :ean, :fuellung, :ende)");
     }
 }
 else {
-echo "<br>Es ist ein Fehler aufgetreten.
+    echo "<br>Es ist ein Fehler aufgetreten.
     <br> Bitte versuchen Sie es nocheinmal!";
 
 }
