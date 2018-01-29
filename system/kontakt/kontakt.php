@@ -25,7 +25,7 @@ echo "
     <div class='col-sm-7'>
         <div id='ansprechpartner'>
             <h2>Ansprechpartner:</h2><br>
-            Theresa Veit Geschäftsführerin <br>
+            Theresa Veit - Geschäftsführerin <br>
             E-Mail: Veit@gmail.com <br><br>
             Matthias Kainz - Geschäftsführer <br>
             E-Mail: Kainz@gmail.com <br> <br>
