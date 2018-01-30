@@ -92,14 +92,14 @@ if($warenkorb->artikel_gesamt() > 0){
 <div class="row">
     <div class="col-sm-2">
         <form>
-            <input type='button' class='produktbutton' name='login_btn' onclick="window.location.href='index.php?page=alledonuts'" value='Gönn Dir noch einen Donut'/>
+            <input type='button' class='produktbutton' name='login_btn' title='Gönn dir noch einen Donut' onclick="window.location.href='index.php?page=alledonuts'" value='Gönn Dir noch einen Donut'/>
         </form>
     </div>
     <div class="col-sm-8">
     </div>
     <div class="col-sm-2">
         <form>
-            <input type='button' class='rosabutton' name='login_btn' onclick="window.location.href='index.php?page=zurkasse'" value='Zur Kasse'/>
+            <input type='button' class='rosabutton' name='login_btn' title='Zur Kasse' onclick="window.location.href='index.php?page=zurkasse'" value='Zur Kasse'/>
         </form>
     </div>
 </div>
