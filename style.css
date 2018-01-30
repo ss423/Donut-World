@@ -283,7 +283,7 @@ ul li a:hover {
 /*HOME*/
 .umrandung_eins {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1.5px;
     height: auto;
     min-height: 22em;
     float: left;
@@ -293,7 +293,7 @@ ul li a:hover {
 .umrandung_eins a {color: #ff3585;}
 .umrandung_zwei {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1.5px;
     height: auto;
     min-height: 28em;
     float: left;
@@ -303,8 +303,7 @@ ul li a:hover {
 .umrandung_zwei a {color: grey;}
 .umrandung_zwei h3 {
     font-size: 100%;}
-.homebild {
-    padding-top: 2em;}
+
 
 
 
