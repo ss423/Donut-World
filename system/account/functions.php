@@ -152,10 +152,10 @@ function login(){           //rufe Funktion Login auf
 
     // Vergewisserung, dass Formular richtig ausgefüllt ist --> Fehlermeldung
     if (empty($email)) {
-        array_push($errors, "Email wird benötigt");     //Die push Methode fügt Werte an das Ende eines Arrays an.
+        array_push($errors, "<p style='color: red; text-align: center;'>Email wird benötigt</p>");     //Die push Methode fügt Werte an das Ende eines Arrays an.
     }                                                   // $errors oben als leeres array() definiert
     if (empty($passwort)) {
-        array_push($errors, "Passwort wird benötigt");
+        array_push($errors, "<p style='color: red; text-align: center;'>Passwort wird benötigt</p>");
     }
 
     //Versuch Login, wenn keine Fehler im Formular
