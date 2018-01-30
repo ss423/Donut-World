@@ -45,7 +45,7 @@ echo "
     <div class='col-sm-6 umrandung_eins'>
         <div class='col-sm-4'>
         <br>
-            <img class='img-responsive' src='bilder/home2.jpg' width='100%' title='Neueröffnung' alt='Neueröffnung Donut World' class='homebild'>
+            <img class='img-responsive homebild' src='bilder/home2.jpg' width='100%' title='Neueröffnung' alt='Neueröffnung Donut World' >
         </div>
         <div class='col-sm-8'>
             <h3>NEU IN DER STADT</h3>
@@ -66,7 +66,7 @@ echo "
     <div class='col-sm-5 umrandung_eins'>
          <div class='col-sm-4'>
          <br>
-            <img class='img-responsive' src='bilder/sechs.jpg' width='100%' title='Special' alt='Spezial Donut World' class='homebild'>
+            <img class='img-responsive homebild' src='bilder/sechs.jpg' width='100%' title='Special' alt='Spezial Donut World'>
         </div>
         <div class='col-sm-8'>
             <h3>SPECIALS</h3>
@@ -85,7 +85,7 @@ echo "
     <div class='col-sm-5 umrandung_zwei'>
         <div class='col-sm-4'>
         <br>
-           <img class='img-responsive' src='bilder/home7.jpg' width='100%' title='Magazin' alt='Donut World Magazin' class='homebild'>
+           <img class='img-responsive homebild' src='bilder/home7.jpg' width='100%' title='Magazin' alt='Donut World Magazin'>
         </div>
         <div class='col-sm-8'>
             <h3>PRESSE</h3>
@@ -102,7 +102,8 @@ echo "
 
     <div class='col-sm-6 umrandung_zwei'>
         <div class='col-sm-4'>
-            <img class='img-responsive' src='bilder/love.jpg' width='100%' title='Liebesdonut' alt='Donut World Liebes Donut' class='homebild'>
+        <br>
+            <img class='img-responsive homebild' src='bilder/love.jpg' width='100%' title='Liebesdonut' alt='Donut World Liebes Donut'>
         </div>
         <div class='col-sm-8'>
             <h3>DONUT FÜR DIE LIEBSTEN</h3>
