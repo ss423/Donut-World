@@ -45,10 +45,10 @@ echo "
     <div class='col-sm-6 umrandung_eins'>
         <div class='col-sm-4'>
         <br>
-            <img class='img-responsive' src='bilder/home2.jpg' width='100%' title='Neueröffnung' alt='Neueröffnung Donut World'>
+            <img class='img-responsive' src='bilder/home2.jpg' width='100%' title='Neueröffnung' alt='Neueröffnung Donut World' class='homebild'>
         </div>
         <div class='col-sm-8'>
-            <h1>NEU IN DER STADT</h1>
+            <h3>NEU IN DER STADT</h3>
             Willkomen bei Donut World!<br>
             Nach nur vier Monaten in der Online Welt und vielen kleinen Aufträgen, eröffnen wir nun 
             endlich unser erster Donut Laden im Fluxus in Stuttgart.
@@ -66,10 +66,10 @@ echo "
     <div class='col-sm-5 umrandung_eins'>
          <div class='col-sm-4'>
          <br>
-            <img class='img-responsive' src='bilder/sechs.jpg' width='100%' title='Special' alt='Spezial Donut World'>
+            <img class='img-responsive' src='bilder/sechs.jpg' width='100%' title='Special' alt='Spezial Donut World' class='homebild'>
         </div>
         <div class='col-sm-8'>
-            <h1>SPECIALS</h1>
+            <h3>SPECIALS</h3>
             Kauft 5 Donuts und erhaltet 6!!!<br>
             Ab morgen den 12.12.2017 startet unsere Winter-Aktion!
             Dazu müsst ihr für 6 DOnuts nur 5 Donuts bezahlen, dass bedeutet ihr bekommt einfach einen Donut geschenkt.
@@ -85,10 +85,10 @@ echo "
     <div class='col-sm-5 umrandung_zwei'>
         <div class='col-sm-4'>
         <br>
-           <img class='img-responsive' src='bilder/home7.jpg' width='100%' title='Magazin' alt='Donut World Magazin'>
+           <img class='img-responsive' src='bilder/home7.jpg' width='100%' title='Magazin' alt='Donut World Magazin' class='homebild'>
         </div>
         <div class='col-sm-8'>
-            <h1>PRESSE</h1>
+            <h3>PRESSE</h3>
             Was 1 Naicer Donut-Spiegel Magazin<br>
             Was ist den das? So ein kleines Start Up Unternehmen hat schon ein Naicen Magazin?!<br>
             Ja! Den wir möchten euch über alle neue Donut-Kreationen auf dem Laufenden halten
@@ -102,11 +102,10 @@ echo "
 
     <div class='col-sm-6 umrandung_zwei'>
         <div class='col-sm-4'>
-        <br>
-            <img class='img-responsive' src='bilder/home8.jpg' width='100%' title='Liebesdonut' alt='Donut World Liebes Donut'>
+            <img class='img-responsive' src='bilder/love.jpg' width='100%' title='Liebesdonut' alt='Donut World Liebes Donut' class='homebild'>
         </div>
         <div class='col-sm-8'>
-            <h1>DONUT FÜR DIE LIEBSTEN</h1>
+            <h3>DONUT FÜR DIE LIEBSTEN</h3>
             Es ist mal wieder Februar..und was heißt das? Genau, es ist wieder <b>Valentinstag!</b> 
             Der Tag an dem man seinen Liebsten mit von Herzen kommenden Geschenk zeigt, dass sie einem wichtig sind und, dass man sie
             lieb hat. <br>
