@@ -26,18 +26,26 @@ $benutzerRow = $query->fetch_assoc();
     <br><br>
 
     <div class="row">
+        <div class="col-sm-12 ueberschrift">
+            <h1>Kasse</h1>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
         <div class="col-sm-6">
             <h2>Lieferadresse</h2><br>
-            <p><?php echo $benutzerRow['vorname'], $benutzerRow['nachname']; ?></p>
-            <p><?php echo $benutzerRow['straße'], $benutzerRow['hausnummer'];?></p>
-            <p><?php echo $benutzerRow['plz'], $benutzerRow['ort'];?></p>
+            <p><?php echo $benutzerRow['vorname'].' '.$benutzerRow['nachname']; ?></p>
+            <p><?php echo $benutzerRow['straße'].' '. $benutzerRow['hausnummer'];?></p>
+            <p><?php echo $benutzerRow['plz'].' '. $benutzerRow['ort'];?></p>
         </div>
 
         <div class="col-sm-6">
-            <h2>Zahlungsinformationen</h2><br>
-            <i>*Bitte Zahlungsart auswählen (Infos finden Sie <a href="index.php?page=versandundzahlung" style="color: grey">hier</a>):</i><br>
-            <h4><input type="radio" name="zahlungsinfo" value="PayPal">PayPal</h4>
-            <h4><input type="radio" name="zahlungsinfo" value="Nachnahme" checked>Nachnahme</h4><br>
+            <h2>Zahlungsinformationen</h2>
+            <i>*Bitte Zahlungsart auswählen (Infos finden Sie <a href="index.php?page=versandundzahlung" style="color: grey">hier</a>):</i><br><br>
+            <h4><input type="radio" name="zahlungsinfo" value="PayPal"> PayPal</h4>
+            <h4><input type="radio" name="zahlungsinfo" value="Nachnahme" checked> Nachnahme</h4><br>
         </div>
     </div>
 

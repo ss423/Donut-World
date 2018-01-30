@@ -2,7 +2,7 @@
 echo "
 <br>
 <div class='row'>
-    <div class='col-sm-12 kontakt'>
+    <div class='col-sm-12 ueberschrift'>
         <h1>Kontakt</h1>
     </div>
 </div>

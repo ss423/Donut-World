@@ -81,6 +81,14 @@ button {
 
 
 
+/* Überschriften */
+.ueberschrift h1 {
+    font-weight: bolder;
+    font-size: 55px;
+    font-family: "Amatic SC";}
+
+
+
 /*Warenkorb Icon*/
 #warenkorbmenge, #warenkorbleer {
     z-index: 1;}
@@ -306,22 +314,6 @@ ul li a:hover {
     -webkit-box-shadow: 0 1px 2px #888;
     margin-left: 5em;
     float: left;}
-
-
-
-/* Produkte */
-.produkte h1 {
-    font-weight: bolder;
-    font-size: 55px;
-    font-family: "Amatic SC";}
-
-
-
-/*Kontakt*/
-.kontakt h1 {
-    font-weight: bolder;
-    font-size: 55px;
-    font-family: "Amatic SC";}
 
 
 
