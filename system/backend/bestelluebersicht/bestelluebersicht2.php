@@ -26,7 +26,7 @@ echo "
 
 $stmt = $db->prepare("SELECT bestellungen.id, bestellungen.endpreis, bestellungen.erstellt, benutzer.nachname, benutzer.vorname, benutzer.straße, benutzer.hausnummer, benutzer.ort, benutzer.plz 
 FROM bestellungen LEFT JOIN benutzer 
-ON bestellungen.benutzer_id=benutzer.id ORDER BY bestellungen.erstellt");
+ON bestellungen.benutzer_id=benutzer.id ORDER BY bestellungen.erstellt DESC");
 
 if(!$stmt->execute()) {
     echo "Datenbank-Fehler ";

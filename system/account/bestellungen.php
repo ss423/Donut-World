@@ -40,7 +40,7 @@ echo"
 ";
 
 //rauslesen Bestellte Artikel
-$stmt = $db->prepare("SELECT * FROM bestellungen WHERE bestellungen.benutzer_id='".$id."'");
+$stmt = $db->prepare("SELECT * FROM bestellungen WHERE bestellungen.benutzer_id='".$id."' ORDER BY bestellungen.erstellt DESC");
 if(!$stmt->execute()){
     echo "Datenbank-Fehler ";
     $arr = $stmt->errorInfo();
