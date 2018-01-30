@@ -6,20 +6,24 @@ body {
     color: black;
     position: relative;}
 
+.donut {
+    padding-top: 3.5em;
+}
+
 .mengenangabe {
     height: 100%;
     max-height: 100%;
     overflow-y: scroll;
 }
 select {
-    border-radius: 3px;
-    width: 30%;
-    padding: 5%;
-    font-size: 100%;
+    border-radius: 5px;
+    background-color:#91EB76;
+    width: 10em;
+    padding: 1em;
+    font-size: 16px;
     border: 1px solid #ccc;
-    height: 10%;
+    height: 18px;
 }
-
 /*Bilder responsive*/
 .img-responsive {
     max-width: 100%;}

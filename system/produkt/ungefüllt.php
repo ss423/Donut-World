@@ -30,7 +30,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div class='row'>
         <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -42,11 +42,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -61,7 +63,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "
         <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -73,11 +75,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -94,7 +98,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<div class='row'>
     <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -106,11 +110,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>

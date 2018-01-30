@@ -30,7 +30,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div class='row'>
         <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -49,8 +49,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <option value='4'>4</option>
                 <option value='5'>5</option>
                 <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -65,7 +63,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "
         <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' title='" . $row["donutname"] . "' alt='Bild: ".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -84,8 +82,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <option value='4'>4</option>
                 <option value='5'>5</option>
                 <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -102,7 +98,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<div class='row'>
     <form action='system/warenkorb/warenkorbaktionen.php' method='post'> 
         <div class='col-sm-2'>
-            <img class='img-responsive' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
+            <img class='img-responsive donut' src='bilder/" . $row["ean"] . "." . $row["ende"] . "' width='120%' alt='Bild: ".$row['donutname']."' title='".$row['donutname']."'>
         </div>
         <div class='col-sm-4'>
 ";
@@ -121,8 +117,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 <option value='4'>4</option>
                 <option value='5'>5</option>
                 <option value='6'>6</option>
-                <option value='7'>7</option>
-                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
