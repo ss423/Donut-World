@@ -42,11 +42,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' size='1' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -73,11 +77,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
@@ -106,11 +114,15 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "EAN-Code: " . $row["ean"];
         echo "<br>
             Menge
-            <select name='mengenangabe'>
+            <select name='mengenangabe' class='mengenangabe'>
                 <option value='1' selected>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
             </select>
     
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
