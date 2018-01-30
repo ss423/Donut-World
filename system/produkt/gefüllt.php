@@ -54,7 +54,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
     
             <br><br>
-             <button type='submit' class='produktbutton' name='warenkorb'>In den Warenkorb</button>
+             <button type='submit' class='produktbutton' name='warenkorb' title='In den Warenkorb'>In den Warenkorb</button>
             <br><br>
          </div>
     </form>";
@@ -87,7 +87,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
     
             <br><br>
-             <button type='submit' class='produktbutton' name='warenkorb'>In den Warenkorb</button>
+             <button type='submit' class='produktbutton' name='warenkorb' title='In den Warenkorb'>In den Warenkorb</button>
             <br><br>
          </div>
     </form>
@@ -122,7 +122,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             <input type='hidden' name='artikel_id' value='" . $row["id"] . "'>
     
             <br><br>
-             <button type='submit' class='produktbutton' name='warenkorb'>In den Warenkorb</button>
+             <button type='submit' class='produktbutton' name='warenkorb' title='In den Warenkorb'>In den Warenkorb</button>
             <br><br>
          </div>
     </form>

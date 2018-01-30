@@ -50,7 +50,6 @@
 
 			<form method='post' action='login.php'>
 
-				<?php echo display_error(); ?>
 
 				<div class="row">
 					<div class='input-group'>
@@ -64,7 +63,9 @@
 						</div>
 					</div>
 				</div>
+
                 <br>
+
 				<div class="row">
 					<div class='input-group'>
 						<div class="col-sm-4">
@@ -80,6 +81,9 @@
 
 				<br>
 
+				<?php echo display_error(); ?>
+
+
 				<div class="row">
 					<div class='input-group'>
 						<div class="col-sm-4">
@@ -87,7 +91,7 @@
 						<div class="col-sm-4">
 						</div>
 						<div class="col-sm-4">
-							<button type='submit' class='rosabutton' name='login_btn'>Einloggen</button>
+							<button type='submit' class='rosabutton' name='login_btn' title='Einloggen' >Einloggen</button>
 						</div>
 					</div>
 				</div>

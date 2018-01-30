@@ -124,13 +124,13 @@ $benutzerRow = $query->fetch_assoc();
 
     <div class="row">
         <div class="col-sm-2">
-                <button href="index.php?page=alledonuts" class="produktbutton">Gönn dir noch einen Donut</button>
+                <button href="index.php?page=alledonuts" class="produktbutton" title="Gönn dir noch einen Donut">Gönn dir noch einen Donut</button>
         </div>
         <div class="col-sm-8">
         </div>
         <div class="col-sm-2">
             <div class="footBtn">
-                <button type='submit' class='rosabutton' name='bestellung'>Jetzt Bestellen</button>
+                <button type='submit' class='rosabutton' name='bestellung' title='Jetzt bestellen'>Jetzt bestellen</button>
             </div>
         </div>
     </div>

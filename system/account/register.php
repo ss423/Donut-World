@@ -153,7 +153,7 @@
                 <br>
 
                 <div class='input-group'>
-                    <button type='submit' class='rosabutton' name='register_btn'>Jetzt registrieren</button>
+                    <button type='submit' class='rosabutton' name='register_btn' title='Jetzt registrieren'>Jetzt registrieren</button>
                 </div>
 
                 <br><br>
