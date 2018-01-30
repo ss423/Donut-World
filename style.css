@@ -307,6 +307,15 @@ ul li a:hover {
     padding-left: 0em;}
 .money {text-align: center;
     padding-right: 0em;}
+#ueberunsfotos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*Kontakt*/
 #standort {
     border-style: solid;
     border-color: white;

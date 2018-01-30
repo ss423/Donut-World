@@ -16,10 +16,6 @@ echo "
         <div class='row'>
         <div id='Historie'>
         <div class='col-sm-12'>
-            <!--
-            <hr style='width: 57em; height: auto; border-top: 1px solid grey;'>
-				<span style='position:relative; top:-2em; margin-left: 14em; background-color: white; font-size: 20px; padding:0 10px;' >Wie alles begann...</span>
-			</hr>-->
             <h3>Wie alles begann..</h3>
             Donut World ist das Ergebnis eines Webprojektes der drei Studenten Saskia Spieth, Matthias Kainz und
             Theresa Veit. <br><br>
@@ -35,10 +31,6 @@ echo "
         <div class='row'>
         <div id='Leitgedanken'>
         <div class='col-sm-12'>
-            <!--
-            <hr style='width: 57em; border-top: 1px solid grey;'>
-				<span style='position:relative; top:-2em; margin-left: 14em; background-color: white; font-size: 20px; padding:0 10px;' >Woran wir glauben</span>
-			</hr> -->
 			<br>
             <h3>Woran wir glauben</h3>
                 Unser Ziel ist Deine Freude! <br><br>
@@ -98,19 +90,40 @@ echo "
           </div>
           </div>
     </div>
-    
-        <br>
-        <br>
+   
         
-        <div class='col-sm-4'>
-            <div id='standort'>
-                <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.0886948217253!2d9.098570615650566!3d48.74200247927631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799dc42026cc05f%3A0xeb88e48af65defde!2sHochschule+der+Medien!5e0!3m2!1sde!2sde!4v1512398576680' width='350' height='250' frameborder='0' style='border:0' allowfullscreen></iframe>
-                <br>
-                <h4>Unser Standort</h4><br>
-                Donut World GmbH <br>
-                in der Hochschule der Medien <br>
-                Nobelstraße 10 <br>
-                70563 Stuttgart-Vaihingen <br>
+        <div class='col-sm-1'>
+        <br><br>
+        </div>
+                
+        
+        
+        <div class='col-sm-3'>
+            <div class='row'>
+                <div class='col-sm-12'>
+                <br><br><br><br>
+                    <img src='bilder/sassi.jpg' alt='Saskia Spieth' title='Saskia Spieth' width='70%' id='ueberunsfotos'><br>
+                    <p style='text-align: center; font-weight: bolder;'>Saskia Spieth</p><br><br>
+                </div>
+            </div>
+            
+            <br><br>
+            
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <img src='bilder/matze.jpeg' alt='Matthias Kainz' title='Matthias Kainz' width='70%' id='ueberunsfotos'><br>
+                    <p style='text-align: center; font-weight: bolder;'>Matthias Kainz</p><br><br>
+                </div>
+            
+            </div>
+            
+            <br><br>
+            
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <img src='bilder/theresa.jpeg' alt='Theresa Veit' title='Theresa Veit' width='70%' id='ueberunsfotos'><br>
+                    <p style='text-align: center; font-weight: bolder;'>Theresa Veit</p><br><br>
+                </div>
             </div>
         </div>
 </div>

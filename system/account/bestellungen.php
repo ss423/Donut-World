@@ -18,17 +18,18 @@ echo"
 
 echo "
 <div class='row'>
-    <div class='col-sm-4'>
+    <div class='col-sm-1'>
         Name:<br>
         Adresse:<br>
     </div>
-    <div class='col-sm-8'>";    //Nutzerangaben (Adresse)
+    <div class='col-sm-11'>";    //Nutzerangaben (Adresse)
         echo $_SESSION["nutzer"]["vorname"] . " " .$_SESSION["nutzer"]["nachname"]. "<br>";
         echo $_SESSION["nutzer"]["straße"] . " " .$_SESSION["nutzer"]["hausnummer"]. "<br>" . $_SESSION["nutzer"]["plz"]. " " . $_SESSION["nutzer"]["ort"];
         echo "</div></div>";
         $id=$_SESSION["nutzer"]["id"];
 
 echo"
+<br>
 <h2>Meine Bestellungen</h2>
 ";
 
