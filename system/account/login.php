@@ -29,7 +29,7 @@
 					</div>
 					<div class="col-sm-4">
 						<a href='../../index.php'>
-							<img class='img-responsive' src="../../bilder/logo.png" width="100%" title="Donut World Startseite" alt="Logo Donut World">
+							<img class='img-responsive' src="../../bilder/logo.png" width="75%" title="Donut World Startseite" alt="Logo Donut World">
 						</a>
 					</div>
 					<div class="col-sm-4">
@@ -100,7 +100,8 @@
 					</div>
 					<div class="col-sm-10">
 						<p>
-						Noch kein Kunde? <a href='register.php' style='color: grey;'>Hier registrieren</a>
+						Noch kein Kunde? <a href='register.php' style='color: grey;'>Hier registrieren</a><br><br>
+							Zurück zur <a style='color: grey;' href='../../index.php'>Startseite</a>
 						</p>
 					</div>
 				</div>

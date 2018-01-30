@@ -353,8 +353,8 @@ label {text-align: left;}
     font-weight: bolder;
     font-size: 55px;
     font-family: "Amatic SC";}
-.loginformular {margin-top: 120px;
-    margin-left: 25px;
+.loginformular {
+    margin-top: 5em;
     padding-top: 20px;
     border-style: solid;
     border-width: thin;
@@ -365,7 +365,12 @@ label {text-align: left;}
     -webkit-box-shadow: 0 5px 5px #888;
     position: absolute;
     background-color: #fafafa;}
-.loginformular input {height: 35px;}
+.loginformular input {
+    height: 35px;}
+.loginformular .img-responsive {
+    margin-left: 1em;}
+.loginformular .input-group button {
+    margin-left: 1em;}
 
 /* Registrierung*/
 #registerlogo {
