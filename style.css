@@ -373,6 +373,12 @@ label {text-align: left;}
     background-color: #fafafa;}
 .loginformular input {
     height: 35px;}
+.loginformular input:focus {
+    border-color: white;
+    outline: 0;
+    -webkit-box-shadow: 0 0 5px 2px #f191b7;
+    -moz-box-shadow: 0 0 5px 2px #f191b7;
+    box-shadow: 0 0 5px 2px #f191b7}
 .loginformular .img-responsive {
     margin-left: 1em;}
 .loginformular .input-group button {
