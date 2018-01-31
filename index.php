@@ -38,7 +38,7 @@ echo"
         </div>
         <div class='col-sm-3'>
             <a href='index.php'>
-                <img src='bilder/titelschrift.png' alt='Donut World' title='Donut World' width='100%' id='titelschrift'>
+                <img src='bilder/titelschrift.png' alt='Donut World' title='Donut World' width='120%' id='titelschrift'>
             </a>
         </div>
         <div class='col-sm-3'>
