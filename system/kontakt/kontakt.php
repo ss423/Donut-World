@@ -65,7 +65,7 @@ echo "
         
         <div class='row'>
             <div class='col-sm-2'>
-                E-Mail-Adresse *:
+                E-Mail *:
             </div>
             <div class='col-sm-8'>
                 <input type='text' name='email' maxlength='80' size='30' placeholder='E-Mail'>

@@ -11,7 +11,7 @@ echo"
         <br>
         <br>
         <br>
-        (!) Hinweis: Dieser Webshop dient rein zu studentischen Zwecken und ist keine echter
+        <img src='bilder/alert.png' width='3%'> <b>Hinweis:</b> Dieser Webshop dient rein zu studentischen Zwecken und ist keine echter
         Online-Shop! Alle hier aufgeführten Informationen sind ausgedacht und fiktiv. Die
         Quellen sind gekennzeichnet.
         <br>
@@ -43,6 +43,8 @@ echo"
         <div>Icons made by <a href=\"https://www.flaticon.com/authors/bogdan-rosu\" title=\"Bogdan Rosu\">Bogdan Rosu</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a> is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>
         <div>Icons made by <a href=\"https://www.flaticon.com/authors/vectors-market\" title=\"Vectors Market\">Vectors Market</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a> is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>
         <div>Icons made by <a href=\"https://www.flaticon.com/authors/catalin-fertu\" title=\"Catalin Fertu\">Catalin Fertu</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a> is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>
+        <div>Icons made by <a href=\"https://www.flaticon.com/authors/fadyucf\" title=\"FadyUCF\">FadyUCF</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a> is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>
+        
         <br>
         <br>
         ___________________
