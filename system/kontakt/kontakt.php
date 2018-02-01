@@ -2,9 +2,7 @@
 echo "
 <br>
 <div class='row'>
-    <div class='col-sm-1'>
-    </div>
-    <div class='col-sm-7'>
+    <div class='col-sm-8'>
         <div class='row'>
             <div class='col-sm-12 ueberschrift'>
                 <h1>Kontakt</h1>

@@ -54,7 +54,7 @@ echo "
         <div class='col-sm-1'>
         </div>
         <div class='col-sm-10'>
-            <h3>NEU IN DER STADT</h3>
+            <h2>NEU IN DER STADT</h2>
             Nach nur vier Monaten in der Online Welt und vielen kleinen Aufträgen, eröffnen wir nun 
             endlich unser erster Donut Laden im Fluxus in Stuttgart.
             Wir werden nun für die kommenden 6 Monaten den besten Platz in der Stadt Stuttgart haben.
@@ -79,7 +79,7 @@ echo "
          <div class='col-sm-1'>
         </div>
         <div class='col-sm-10'>
-            <h3>SPECIALS</h3>
+            <h2>SPECIALS</h2>
             Kauft 5 Donuts - erhaltet 6!!!<br>
             Ab morgen den 02.02.2018 startet unsere Valentins-Aktion!
             Kommt dazu einfach bei uns im Store vorbei oder schaut in unserem neuen Online-Store, sucht euch sechs Donuts aus und zahl nur fünf Donuts!
@@ -104,7 +104,7 @@ echo "
          <div class='col-sm-1'>
         </div>
         <div class='col-sm-10'>
-            <h3>PRESSE</h3>
+            <h2>PRESSE</h2>
             Was 1 Naicer Donut-Spiegel Magazin<br>
             Was ist den das? So ein kleines Start Up Unternehmen hat schon ein Naicen Magazin?!<br>
             Ja! Den wir möchten euch über alle neue Donut-Kreationen auf dem Laufenden halten
@@ -127,7 +127,7 @@ echo "
          <div class='col-sm-1'>
         </div>
         <div class='col-sm-10'>
-            <h3>DONUT FÜR DIE LIEBSTEN</h3>
+            <h2>DONUT FÜR DIE LIEBSTEN</h2>
             Es ist mal wieder Februar..und was heißt das? Genau, es ist wieder <b>Valentinstag!</b> 
             Der Tag an dem man seinen Liebsten mit von Herzen kommenden Geschenk zeigt, dass sie einem wichtig sind und, dass man sie
             lieb hat. <br>
