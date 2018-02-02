@@ -60,13 +60,13 @@ if($warenkorb->artikel_gesamt() > 0){
                 <a href="system/warenkorb/warenkorbaktionen.php?action=entfernen_warenkorbartikel&id=<?php echo $artikel["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Bist du sicher?')"><i class="glyphicon glyphicon-trash"></i></a>
             </div>
             <div class="col-sm-1">
-                <?php echo '<br>'.$artikel["preis"].' EURO'; ?>
+                <?php echo '<br>'.$artikel["preis"].' €'; ?>
             </div>
             <div class="col-sm-1"><br>
                 <input type="number" class="form-control text-center" value="<?php echo $artikel["menge"]; ?>" onchange="update_warenkorbartikel(this, '<?php echo $artikel["rowid"]; ?>')">
             </div>
             <div class="col-sm-1"><br>
-                <?php echo '€'.$artikel["summepreis"].' EURO'; ?>
+                <?php echo $artikel["summepreis"].' €'; ?>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ if($warenkorb->artikel_gesamt() > 0){
     </div>
     <div class="col-sm-1">
         <?php if($warenkorb->artikel_gesamt() > 0){ ?>
-            <?php echo '€'.$warenkorb->gesamt().' EURO'; ?>
+            <?php echo $warenkorb->gesamt().' €'; ?>
         <?php } ?>
     </div>
 </div>

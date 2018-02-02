@@ -1,7 +1,8 @@
 <?php
 //erst wenn man eingelogt ist hat man zugriff auf kasse
 if (!isLoggedIn()) {
-    echo "<h3>Du musst dich erst <a href=system/account/login.php style='color: grey;'>einloggen</a>!</h3>";}
+    echo "<br><h4>Du musst dich erst <a href=system/account/login.php style='color: grey;'>einloggen</a>!</h4>
+            <br><br><br><br><br><br><br><br>";}
 else {
 
 include 'system/account/config.php';
@@ -91,13 +92,13 @@ $benutzerRow = $query->fetch_assoc();
                     <?php echo $artikel["beschreibung"]; ?><br>
                 </div>
                 <div class="col-sm-1">
-                    <?php echo '€'.$artikel["preis"].' EURO'; ?>
+                    <?php echo $artikel["preis"].' €'; ?>
                 </div>
                 <div class="col-sm-1">
                     <?php echo $artikel["menge"]; ?>
                 </div>
                 <div class="col-sm-1">
-                    <?php echo '$'.$artikel["summepreis"].' EURO'; ?>
+                    <?php echo $artikel["summepreis"].' €'; ?>
                 </div>
             </div>
 
@@ -115,7 +116,7 @@ $benutzerRow = $query->fetch_assoc();
                 <b>Summe:</b>
             </div>
             <div class="col-sm-1">
-                <?php echo '€'.$warenkorb->gesamt().' EURO'; ?>
+                <?php echo $warenkorb->gesamt().' €'; ?>
             </div>
         </div>
     <?php } ?>
