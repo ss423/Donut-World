@@ -57,7 +57,7 @@ if($warenkorb->artikel_gesamt() > 0){
             <div class="col-sm-6">
                 <?php echo "<h3>".$artikel["donutname"]."</h3><br>"; ?>
                 <?php echo $artikel["beschreibung"]."<br>"; ?><br>
-                <a href="system/warenkorb/warenkorbaktionen.php?action=entfernen_warenkorbartikel&id=<?php echo $artikel["rowid"]; ?>" class="muelleimer" title="Aus dem Warenkorb entfernen" onclick="return confirm('Bist du sicher?')"><img src='bilder/muelleckig.png' width='4%'></a>
+                <a href="system/warenkorb/warenkorbaktionen.php?action=entfernen_warenkorbartikel&id=<?php echo $artikel["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Bist du sicher?')"><i class="glyphicon glyphicon-trash"></i></a>
             </div>
             <div class="col-sm-1">
                 <?php echo '<br>'.$artikel["preis"].' EURO'; ?>
