@@ -135,7 +135,6 @@ $benutzerRow = $query->fetch_assoc();
             </div>
         </div>
     </div>
-
 </form>
 </body>
 </html>

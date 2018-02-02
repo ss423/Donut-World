@@ -74,6 +74,7 @@ if($warenkorb->artikel_gesamt() > 0){
     <p>Dein Warenkorb ist leer.</p>
 <?php } ?>
 
+
 <div class="row">
     <div class="col-sm-10">
     </div>
