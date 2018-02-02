@@ -83,12 +83,15 @@
                         <input type='email' name='email' placeholder='E-Mail' value='<?php echo $email; ?>'>
                     </div>
                     <div class="col-sm-4">
-                        <label>Nutzer Typ</label> <br>
-                        <select name='nutzer_typ' id='nutzer_typ' >
-                            <option value=""></option>
-                            <option value='admin'>Admin</option>
-                            <option value='nutzer'>Nutzer</option>
-                        </select>
+                        <label>Nutzer Typ <br>
+                        <div class="nutzer_typ">
+                            <select name='nutzer_typ' size='1' id='nutzer_typ' >
+                                <option value=''></option>
+                                <option value='admin'>Admin</option>
+                                <option value='nutzer'>Nutzer</option>
+                            </select>
+                        </div>
+                        </label>
                     </div>
                 </div>
             </div>

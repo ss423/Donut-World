@@ -6,24 +6,6 @@ body {
     color: black;
     position: relative;}
 
-.donut {
-    padding-top: 4em;
-}
-
-.mengenangabe {
-    height: 100%;
-    max-height: 100%;
-    overflow-y: scroll;
-}
-select {
-    border-radius: 5px;
-    background-color:#91EB76;
-    width: 10em;
-    padding: 1em;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    height: 18px;
-}
 /*Bilder responsive*/
 .img-responsive {
     max-width: 100%;}
@@ -335,6 +317,25 @@ ul li a:hover {
     margin-right: auto;}
 
 
+/*PRODUKT*/
+/*Produktbilder*/
+.donut {
+    padding-top: 4em;}
+/*Mengenangabe*/
+.mengenangabe {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: scroll;}
+select {
+    border-radius: 5px;
+    background-color: white;
+    width: 10em;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 18px;}
+
+
 
 /*Kontakt*/
 #standort {
@@ -422,6 +423,14 @@ label {text-align: left;}
 .nutzererstellungformular {text-align: left;
     margin-left: 12em;}
 .nutzererstellungformular input {height: 30px;}
+.nutzer_typ select{
+    border-radius: 5px;
+    background-color: white;
+    width: 8em;
+    padding: 1em;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 15px;}
 
 
 
@@ -479,8 +488,6 @@ input, textarea {
     height: auto;
     float: left;}
 
-
-select {background-color: white;}
 
 
 /*_______ Navi für Handy____________________________________________________________*/
