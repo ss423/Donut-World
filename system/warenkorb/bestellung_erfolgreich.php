@@ -13,14 +13,14 @@ echo"
     <div class='col-sm-12'>
         <br>
         <h1>Danke für Ihre Bestellung!</h1>
-        Sie erhalten eine Bestellbestätigung per E-Mail!<br>
     </div>
 </div>
 
 <br>
 <div class='row'>
     <div class='col-sm-12'>
-        <p>Deine Bestellung war erfolgreich. Deine Bestellnummer lautet #".$_GET['id']."</p>
+        <p>Ihre Bestellung war erfolgreich. Ihre Bestellnummer lautet: ".$_GET['id']."</p>
+        Sie erhalten eine Bestellbestätigung per E-Mail!<br>
     </div>
 </div>
 <br>
@@ -64,10 +64,16 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     </div>
 </div>
 <div class='row'>
+    <br>
+</div>
+<div class='row'>
     <div class='col-sm-6 strich'>
     </div>
     <div class='col-sm-6'>
     </div>
+</div>
+<div class='row'>
+    <br>
 </div>
 
 ";
