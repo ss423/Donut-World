@@ -15,30 +15,25 @@ if($warenkorb->artikel_gesamt() <= 0){
 
 $nutzer_id=$_SESSION['nutzer']['id'];           //UNSERE EIGENE NUTZER ID NEHMEN
 
-
-$stmt = $db->prepare("SELECT * FROM benutzer WHERE id =".$nutzer_id);
+$stmt = $db->prepare("SELECT * FROM benutzer WHERE id ='".$nutzer_id."'");
     if(!$stmt->execute()) {
         echo "Datenbank-Fehler ";
         $arr = $stmt->errorInfo();
         print_r($arr);
         die();
     }
-while ($benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC)) {}
+$benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <?php $bestellungen_id = $db->lastInsertId;
 ?>
 <body>
 <form action="system/warenkorb/warenkorbaktionen.php" method="post">
 
-    <br><br>
-
     <div class="row">
         <div class="col-sm-12 ueberschrift">
             <h1>Kasse</h1>
         </div>
     </div>
-
-    <br><br>
 
     <div class="row">
         <div class="col-sm-6">
@@ -56,7 +51,6 @@ while ($benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC)) {}
         </div>
     </div>
 
-    <br>
 
     <div class="row">
         <div class="col-sm-12">
@@ -69,16 +63,16 @@ while ($benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC)) {}
             <!--Bild -->
         </div>
         <div class="col-sm-6">
-            <h3>Artikel</h3>
+            <h4>Artikel</h4>
         </div>
         <div class="col-sm-1">
-            <h3>Preis</h3>
+            <h4>Preis</h4>
         </div>
         <div class="col-sm-1">
-            <h3>Menge</h3>
+            <h4>Menge</h4>
         </div>
         <div class="col-sm-1">
-            <h3>Endpreis</h3>
+            <h4>Endpreis</h4>
         </div>
     </div>
     <?php

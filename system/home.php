@@ -42,7 +42,7 @@ echo "
 </div>
 
 <hr style='width: 100%; height: auto; border-top: 1px solid grey;'>
-    <span style='position:relative; top: -2em; margin-left: 49%; background-color: white; color: grey; font-size: 140%; padding:0 10px;' >NEWS</span>
+    <span style='position:relative; top: -2em; margin-left: 45.5%; background-color: white; color: grey; font-size: 140%; padding:0 10px;' >NEWS</span>
 </hr>
 
 <div class='row '>
