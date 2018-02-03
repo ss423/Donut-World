@@ -5,8 +5,8 @@ $warenkorb = new warenkorb;  //erzeugt neues Objekt "Warebnkorb"
 include '../../config.php';
 
 
-if(isset($_GET['action']) && !empty($_GET['action'])) {
-    if ($_GET['action'] == 'update_warenkorbartikel' && !empty($_GET['id'])) {
+if(isset($_GET['action'])) {
+    if ($_GET['action'] == 'update_warenkorbartikel') {
         $artikel_daten = array(
             'rowid' => $_GET['id'],
             'menge' => $_GET['menge']
@@ -14,8 +14,8 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
         $update_artikel = $warenkorb->update($artikel_daten);
         echo $update_artikel ? 'ok' : 'error';
         die;
-    } elseif ($_GET['action'] == 'entfernen_warenkorbartikel' && !empty($_GET['id'])) {        //artikel entfernen
-        $loeschen_artikel = $warenkorb->entfernen($_REQUEST['id']);
+    } elseif ($_GET['action'] == 'entfernen_warenkorbartikel') {
+        $loeschen_artikel = $warenkorb->entfernen($_GET['id']);
         header("Location: ../../index.php?page=warenkorbansicht");
     } else {
         header("Location: ../../index.php?page=alledonuts");
@@ -32,19 +32,19 @@ if(isset($_POST['warenkorb'])){
         print_r($arr);
         die();
     }
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $artikel_daten = array(         //Infos mit row rauslesen
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {    //gibt ein array indiziert mit dem jeweiligen spaltennamen raus
+        $artikel_daten = array(         //Infos mit row rauslesen und dem array übergeben
             'id' => $row['id'],
             'donutname' => $row['donutname'],
             'preis' => $row['preis'],
-            'menge' => $_POST['mengenangabe'],       //festlegen menge --> ändern
+            'menge' => $_POST['mengenangabe'],       //menge wird über post von vorheriger seite reingezogen
             'ean' => $row['ean'],
             'beschreibung' => $row['beschreibung'],
             'ende' => $row['ende']
         );
     }
-    $artikel_einfuegen = $warenkorb->einfuegen($artikel_daten);
-    $weiterleiten = $artikel_einfuegen?'../../index.php?page=warenkorbansicht':'../../index.php?page=alledonuts';
+    $artikel_einfuegen = $warenkorb->einfuegen($artikel_daten);    //aufruf der methode "einfuegen" um die artkel daten in das objekt "wsrenkorb" einzufügen
+    $weiterleiten = $artikel_einfuegen?'../../index.php?page=warenkorbansicht':'../../index.php?page=alledonuts';  //wenn artikel_eingefuegen TRUE , dann warenkorbansicht sonst bei FALSE alledonuts
     header("Location: ".$weiterleiten);
 }else{
     header("Location: ../../index.php?page=alledonuts");
@@ -63,7 +63,7 @@ if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_S
     }
     // wenn bestelldaten eingefügt wurden, artikel daten einfügen
     if ($bestellung_einfuegen) {
-        $bestellungen_id = $db->lastInsertId();
+        $bestellungen_id = $db->lastInsertId();  //gibt zuletzt hinzugefügte id der bestellung aus (die wurde durch auto increment vorher vergeben)
         $sql = '';
 
         $warenkorb_artikel = $warenkorb->inhalte();

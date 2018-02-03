@@ -1,8 +1,8 @@
 <body>
 <script>
-    function update_warenkorbartikel(obj,id){
+    function update_warenkorbartikel(obj,id){       //holt sich mit $.get die daten von der warenkorbaktionen wenn action update_warenkorbartikel ausgeführt wird
         $.get("system/warenkorb/warenkorbaktionen.php", {action:"update_warenkorbartikel", id:id, menge:obj.value}, function(daten){
-            if(daten == 'ok'){
+            if(daten == 'ok'){     //wenn die daten 'ok' sind reloade die seite, ansonsten die fehlermeldung
                 location.reload();
             }else{
                 alert('Aktualisieren des Warenkorbs fehlgeschlagen, bitte versuche es erneut.');
@@ -41,10 +41,10 @@
 <br>
 
 <?php
-if($warenkorb->artikel_gesamt() > 0){
-    //Warenkoarbartikel von der Session rauslesen
-    $warenkorb_artikel = $warenkorb->inhalte();
-    foreach($warenkorb_artikel as $artikel){
+if($warenkorb->artikel_gesamt() > 0){     //wenn gesammte artikel ausgegeben werden und die mehr als 0 sind mach weiter
+
+    $warenkorb_artikel = $warenkorb->inhalte();      //Warenkoarbartikel auslesen und und in reihenfolge neuster zuerst (siehe warenkorb.php) einfügen
+    foreach($warenkorb_artikel as $artikel){     //jeder eintarg des arrays wird druchlaufen und in $artikel gespeichert
         ?>
         <div class="row">
             <div class="col-sm-3">
@@ -61,7 +61,7 @@ if($warenkorb->artikel_gesamt() > 0){
                 <?php echo '<br>'.$artikel["preis"].' €'; ?>
             </div>
             <div class="col-sm-1"><br>
-                <input type="number" class="form-control text-center" value="<?php echo $artikel["menge"]; ?>" onchange="update_warenkorbartikel(this, '<?php echo $artikel["rowid"]; ?>')">
+                <input type="number" class="form-control text-center" value="<?php echo $artikel["menge"]; ?>" onchange="update_warenkorbartikel(this, '<?php echo $artikel["rowid"]; ?>')">   <!--wenns geändert wird, wird javacript ausgeführt-->
             </div>
             <div class="col-sm-1"><br>
                 <?php echo $artikel["summepreis"].' €'; ?>
@@ -80,7 +80,7 @@ if($warenkorb->artikel_gesamt() > 0){
         <b>Summe:</b>
     </div>
     <div class="col-sm-1">
-        <?php if($warenkorb->artikel_gesamt() > 0){ ?>
+        <?php if($warenkorb->artikel_gesamt() > 0){ ?>   <!--wenn gesammte artikel ausgegeben werden und die mehr als 0 sind dann gibt gesammtpreis aus-->
             <?php echo $warenkorb->gesamt().' €'; ?>
         <?php } ?>
     </div>
