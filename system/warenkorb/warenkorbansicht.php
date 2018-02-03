@@ -1,5 +1,3 @@
-
-
 <body>
 <script>
     function update_warenkorbartikel(obj,id){

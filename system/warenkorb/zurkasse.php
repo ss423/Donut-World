@@ -5,7 +5,7 @@ if (!isLoggedIn()) {
             <br><br><br><br><br><br><br><br>";}
 else {
 
-include 'system/account/config.php';
+include 'config.php';
 
 
 if($warenkorb->artikel_gesamt() <= 0){
@@ -16,10 +16,16 @@ if($warenkorb->artikel_gesamt() <= 0){
 $nutzer_id=$_SESSION['nutzer']['id'];           //UNSERE EIGENE NUTZER ID NEHMEN
 
 
-$query = $db->query("SELECT * FROM benutzer WHERE id =".$nutzer_id);
-$benutzerRow = $query->fetch_assoc();
+$stmt = $db->prepare("SELECT * FROM benutzer WHERE id =".$nutzer_id);
+    if(!$stmt->execute()) {
+        echo "Datenbank-Fehler ";
+        $arr = $stmt->errorInfo();
+        print_r($arr);
+        die();
+    }
+while ($benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC)) {}
 ?>
-<?php $bestellungen_id = $db->insert_id;
+<?php $bestellungen_id = $db->lastInsertId;
 ?>
 <body>
 <form action="system/warenkorb/warenkorbaktionen.php" method="post">

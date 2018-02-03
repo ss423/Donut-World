@@ -2,9 +2,9 @@
 session_start();
 
 class warenkorb {
-    protected $warenkorb_inhalte = array();
+    protected $warenkorb_inhalte = array();   //schützt vor zugrifff von außen und kann quasi nur in der klasse verändert werden
 
-    public function __construct(){
+    public function __construct(){   //wird aufgerufen, wenn neuer warenkorb erzeugt wird, entweder komplett neu, oder bestehender wird genommen
         // Warenkorb array von der Session bekommen --> wenn nicht leer dann übernehmen sonst null reinsetzen
         $this->warenkorb_inhalte = !empty($_SESSION['warenkorb_inhalte'])?$_SESSION['warenkorb_inhalte']:NULL;
         if ($this->warenkorb_inhalte === NULL){
