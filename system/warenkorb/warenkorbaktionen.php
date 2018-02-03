@@ -51,7 +51,7 @@ if(isset($_POST['warenkorb'])){
 }
 
 
-if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_SESSION['nutzer']['id'])){  //bestellung aufgeben, wenn warenkorb nicht leer ist und mit nutzer ide
+if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_SESSION['nutzer']['id'])){  //bestellung aufgeben, wenn warenkorb nicht leer ist und mit nutzer id
     $bezahlmethode=($_POST['zahlungsinfo']);
         // bestelldaten in DB eintragen
     $bestellung_einfuegen = $db->prepare("INSERT INTO bestellungen (benutzer_id, bezahlmethode, endpreis, erstellt, bearbeitet) VALUES ('" . $_SESSION['nutzer']['id'] . "', '" . $bezahlmethode . "', '" . $warenkorb->gesamt() . "', '" . date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "')");

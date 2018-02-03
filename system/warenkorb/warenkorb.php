@@ -16,7 +16,7 @@ class warenkorb {
     public function inhalte(){
         $warenkorb = array_reverse($this->warenkorb_inhalte);   // gibt das neueste zuerst raus (reverse=umdrehen)
 
-        unset($warenkorb['artikel_gesamt']);       //löschen der variablen artikel gesamt & warenkorb gesamt --> brauchens nciht für artikel ausgabe
+        unset($warenkorb['artikel_gesamt']);       //löschen der variablen artikel gesamt & warenkorb gesamt --> brauchens nciht für artikel ausgabe --> andernfalls würden alle in Array gespeicherte Daten ausgegeben
         unset($warenkorb['warenkorb_gesamt']);
 
         return $warenkorb;
@@ -34,7 +34,7 @@ class warenkorb {
 
 //Fügt Artikel hinzu und Speichert ihn
     public function einfuegen($artikel = array()){         //$artikel wird als array gesetzt
-        if(!is_array($artikel) OR count($artikel) === 0){   //prüft ob $artikel noch kein array ist oder die anzahl der elemente im array 0 ist
+        if(!is_array($artikel) OR count($artikel) === 0){   //prüft ob $artikel noch kein array ist oder die anzahl der elemente im array 0 ist --> wenn so ist geht das einfügen nicht
             return FALSE;
         }else{
             if(!isset($artikel['id'], $artikel['donutname'], $artikel['preis'], $artikel['menge'], $artikel['ean'], $artikel['beschreibung'], $artikel['ende'])){
@@ -47,14 +47,14 @@ class warenkorb {
 
                 $artikel['preis'] = (float) $artikel['preis'];    //preis wird als float gesetzt
                 $rowid = ($artikel['id']);
-                $menge_alt = isset($this->warenkorb_inhalte[$rowid]['menge']) ? (int) $this->warenkorb_inhalte[$rowid]['menge'] : 0;   // bekommt die menge der jeweiligen id des artikels und fügt sie als integer hinzu falls es eine menge gibt ansonsten wird 0 übergeben
+                $menge_alt = isset($this->warenkorb_inhalte[$rowid]['menge']) ? (int) $this->warenkorb_inhalte[$rowid]['menge'] : 0;   // bekommt die alte menge der jeweiligen id des artikels und fügt sie als integer hinzu falls es eine menge gibt ansonsten wird 0 übergeben
                 $artikel['rowid'] = $rowid;
                 $artikel['menge'] += $menge_alt;               //neue menge wird mit evtl bereits vorhandenen addiert
                 $this->warenkorb_inhalte[$rowid] = $artikel;   //ins array wird der artikel mit der jeweiligen id hinzugefügt
 
             //Speichert es dann in die Session
                 if($this->warenkorb_speichern()){
-                    return isset($rowid) ? $rowid : TRUE;    //wenn rowid gesetzt ist speichern ansonsten nicht
+                    return isset($rowid) ? $rowid : TRUE;    //wenn rowid gesetzt ist oder vorhanden ist speichern ansonsten nicht
                 }else{
                     return FALSE;
                 }
@@ -67,7 +67,7 @@ class warenkorb {
         if (!is_array($artikel) OR count($artikel) === 0){     //prüft ob $artikel noch kein array ist oder die anzahl der elemente im array 0 ist
             return FALSE;
         }else{
-            if (!isset($artikel['rowid'], $this->warenkorb_inhalte[$artikel['rowid']])){   //prüft ob es einen artikel mit einer id gibt
+            if (!isset($artikel['rowid'], $this->warenkorb_inhalte[$artikel['rowid']])){   //prüft ob es einen artikel mit einer id gibt und ob es ein array mit dieser id gibt
                 return FALSE;
             }else{
                 if(isset($artikel['menge'])){                           //wenn eine menge gesetzt ist
@@ -79,7 +79,7 @@ class warenkorb {
                 }
                 $keys = array_intersect(array_keys($this->warenkorb_inhalte[$artikel['rowid']]), array_keys($artikel));  //liefert schnittmenge der warenkorbinhalte des jeweiligen artikels und der schlüssel
                 if(isset($artikel['preis'])){
-                    $artikel['preis'] = (float) $artikel['preis'];   //wenn ein preis gesetztt ist, mach den preis zu einem float
+                    $artikel['preis'] = (float) $artikel['preis'];   //wenn ein preis gesetzt ist, mach den preis zu einem float
                 }
                 foreach(array_diff($keys, array('id', 'donutname')) as $key){     // Produkt id & name bleiben erhalten --> nicht veränderbar
                     $this->warenkorb_inhalte[$artikel['rowid']][$key] = $artikel[$key];   //update die menge genau an der stelle an dem der key dann zutrifft
