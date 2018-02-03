@@ -27,7 +27,6 @@ echo $_SESSION["nutzer"]["vorname"] . " " .$_SESSION["nutzer"]["nachname"]. "<br
 echo $_SESSION["nutzer"]["straße"] . " " .$_SESSION["nutzer"]["hausnummer"]. "<br>" . $_SESSION["nutzer"]["plz"]. " " . $_SESSION["nutzer"]["ort"];
 echo "</div></div>";
 $id=$_SESSION["nutzer"]["id"];
-echo $id;
 echo"
 <h2>Meine Bestellungen</h2>
 <div class='row'>

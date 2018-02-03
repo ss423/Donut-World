@@ -101,7 +101,7 @@ button {
     z-index: 2;}
 
 #warenkorbleer {
-    margin-left: -2em;
+    margin-left: -5em;
     min-height: 2em;
     min-width: 10em;
     padding-left: 1em;
@@ -118,7 +118,7 @@ button {
     font-size: 16px;}
 
 .mengeinhaltleer {
-    margin-left: 3%;
+    margin-left: -40em;
     margin-top: 3%;}
 
 #mengegesamt {
@@ -214,8 +214,8 @@ ul li a:hover {
 .dropdownlinks2 {
     display: none;
     position: absolute;
-    margin-right: -10px;
-    min-width: 40px;
+    margin-left: -40px;
+    min-width: 140%;
     min-height: 30px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
     z-index: 1;}
