@@ -5,7 +5,7 @@ $nachname=$_SESSION["nutzer"]["nachname"]; //rauslesen Nutzer Nachname
 
 echo"
 <div class='row'>
-    <div class='col-sm-12 produkte'>
+    <div class='col-sm-12 ueberschrift'>
         <h1>Meine Seite</h1>
     </div>
 </div>

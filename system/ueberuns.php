@@ -16,7 +16,7 @@ echo "
         <div class='row'>
         <div id='Historie'>
         <div class='col-sm-12'>
-            <h3>Wie alles begann..</h3>
+            <h3><b>Wie alles begann..</b></h3>
             Donut World ist das Ergebnis eines Webprojektes der drei Studenten Saskia Spieth, Matthias Kainz und
             Theresa Veit. <br><br>
             Gegründet wurde das Unternehmen im Herbst 2017 an der Hochschule der Medien. Seitdem wurden
@@ -32,7 +32,7 @@ echo "
         <div id='Leitgedanken'>
         <div class='col-sm-12'>
 			<br>
-            <h3>Woran wir glauben</h3>
+            <h3><b>Woran wir glauben</b></h3>
                 Unser Ziel ist Deine Freude! <br><br>
                 Aus diesem Grund möchten wir den Service so einfach wie möglich für Dich
                 gestalten und Dir nur die beste Qualität und die besten Vorteile bieten: <br><br><br><br>
