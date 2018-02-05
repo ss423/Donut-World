@@ -1,6 +1,6 @@
 <?php
 //erst wenn man eingelogt ist hat man zugriff auf kasse
-if (!isLoggedIn()) {
+if (!isset($_SESSION['nutzer'])) {
     echo "<br><h4>Du musst dich erst <a href=system/account/login.php style='color: grey;'>einloggen</a>!</h4>
             <br><br><br><br><br><br><br><br>";}
 else {

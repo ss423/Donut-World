@@ -11,7 +11,7 @@ echo"
         <br>
         <br>
         <br>
-        <img src='bilder/alert.png' width='3%'> <b>Hinweis:</b> Dieser Webshop dient rein zu studentischen Zwecken und ist keine echter
+         <b>( ! ) Hinweis:</b> Dieser Webshop dient rein zu studentischen Zwecken und ist keine echter
         Online-Shop! Alle hier aufgeführten Informationen sind ausgedacht und fiktiv. Die
         Quellen sind gekennzeichnet.
         <br>

@@ -3,7 +3,6 @@
 session_start();
 
 // Datenbankverbindung einbinden
-// include 'config.php';
 include '../../config.php';
 
 // Definition Variablen
