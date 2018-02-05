@@ -48,7 +48,7 @@ echo "
             <div class='col-sm-4'>
             </div>    
         </div>
-        <form name='nachricht' method='post' action='index.php?page=kontaktsenden' > <!--Kontaktformular über post -->
+        <form name='nachricht' method='post' action='index.php?page=kontaktsenden' > 
         
         <div class='row'>
             <div class='col-sm-2'>

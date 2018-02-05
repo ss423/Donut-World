@@ -18,7 +18,7 @@ if ($zeile = $stmt->fetchObject()) {
         <br><br>";
 
     echo "
-        <div class='row'> <!--Abfrage ob man löschen will-->
+        <div class='row'> 
             <div class='col-sm-2'>
             </div>
             <div class='col-sm-8'>
@@ -124,9 +124,6 @@ catch (PDOException $e) {
     die();
 }
 
-
-
-//bezieht sich wieder nur auf einen Datensatz, hier hole ich mir die ID
 echo "
       <div class='row'>
             <div class='col-sm-5'>
@@ -142,7 +139,7 @@ echo "
       </div> 
       
       <br><br><br>
-";              //Wenn ja, dann Verweis auf delete 2 //Bei nein, Verweis auf Startseite
+";
 echo"
 </body>
 </html>";
