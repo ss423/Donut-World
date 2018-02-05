@@ -90,7 +90,7 @@ echo "
             </div>
             <div class='col-sm-8'>
                 <input type='file' name='datei' id='datei'>
-                <small>(Nur .jpg-Dateien sind erlaubt!)</small>
+                <small>(Es sind nur png, jpg, jpeg und gif-Dateien erlaubt!)</small>
             </div>
         </div>
         
