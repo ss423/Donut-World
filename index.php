@@ -50,9 +50,8 @@ echo"
                 
                 <ul><div class='dropdownlinks2'>
 ";
-                    include ("system/account/functions.php");
                     include ("system/account/logout.php");
-                        if (isLoggedIn()) // wenn Nutzer eingeloggt
+                        if (isset($_SESSION['nutzer']))  // wenn Nutzer eingeloggt
                         {
                         echo"
                             <li><a href='index.php?logout='1''>Logout</a></li>";
@@ -64,12 +63,12 @@ echo"
                         }
 
 
-                        if (isAdmin()) // wenn Admin eingeloggt
+                        if (isset($_SESSION['nutzer']) && $_SESSION['nutzer']['nutzer_typ'] == 'admin' ) // wenn Admin eingeloggt
                         {
                             echo"
                                                 <li><a href='system/backend/admin.php?page=bestelluebersicht'>Backend</a></li>";
                         }
-                        elseif(isLoggedIn()) // Admin nicht eingeloggt
+                        elseif (isset($_SESSION['nutzer'])) // Admin nicht eingeloggt
                         {
                             echo "
                                                 <li><a href='index.php?page=account'>Meine Seite</a></li>";
@@ -219,6 +218,9 @@ echo" <div class='layout'>";
                 break;
             case "account":
                 include "system/account/bestellungen.php";
+                break;
+            case "register_erfolgreich":
+                include "system/account/register_erfolgreich.php";
                 break;
             case "impressum":
                 include "system/footer/impressum.php";

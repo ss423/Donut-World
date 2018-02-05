@@ -2,10 +2,11 @@
 
 session_start();
 
-// Verbindung zur Datenbank
-include 'config.php';
+// Datenbankverbindung einbinden
+// include 'config.php';
+include '../../config.php';
 
-// Variablen werden hier definiert
+// Definition Variablen
 $vorname    = "";
 $nachname   = "";
 $straße     = "";
@@ -15,7 +16,7 @@ $ort        = "";
 $email      = "";
 $errors     = array();
 
-// Registrier Funktion wird aufgerufen, wenn Registrieren Button geklickt wird
+// Registrier-Funktion wird aufgerufen, wenn Registrieren Button geklickt wird
 if (isset($_POST['register_btn'])) {
     register();
 }
@@ -27,15 +28,15 @@ function register(){
 
     //empfange alle Eingabewerte aus dem Formular. Ruft die e () -Funktion auf.
     // unten definiert, um Formularwerte zu umgehen
-    $vorname     =  e($_POST['vorname']);
-    $nachname    =  e($_POST['nachname']);
-    $straße      =  e($_POST['straße']);
-    $hausnummer  =  e($_POST['hausnummer']);
-    $plz         =  e($_POST['plz']);
-    $ort         =  e($_POST['ort']);
-    $email       =  e($_POST['email']);
-    $passwort_1  =  e($_POST['psw_1']);
-    $passwort_2  =  e($_POST['psw_2']);
+    $vorname     =  ($_POST['vorname']);
+    $nachname    =  ($_POST['nachname']);
+    $straße      =  ($_POST['straße']);
+    $hausnummer  =  ($_POST['hausnummer']);
+    $plz         =  ($_POST['plz']);
+    $ort         =  ($_POST['ort']);
+    $email       =  ($_POST['email']);
+    $passwort_1  =  ($_POST['psw_1']);
+    $passwort_2  =  ($_POST['psw_2']);
 
 // Sicherstellung ob alles korrekt ausgefüllt ist
     if (empty($vorname)) {
@@ -71,23 +72,34 @@ function register(){
         $passwort = md5($passwort_1);//Passwort wird verschlüsselt bevor es in der Datenbank angelegt wird
 
         if (isset($_POST['nutzer_typ'])) {
-            $nutzer_typ = e($_POST['nutzer_typ']);
-            $query = "INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
-					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', '$nutzer_typ', '$passwort')";
-            mysqli_query($db, $query);
+            $nutzer_typ = ($_POST['nutzer_typ']);
+            $stmt = $db->prepare ("INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
+					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', '$nutzer_typ', '$passwort')");
+            if(!$stmt->execute()) {
+                echo "Datenbank-Fehler ";
+                $error = $stmt->errorInfo();
+                print_r($error);
+                die();
+            }
             $_SESSION['erfolgreich']  = "Die Registrierung war erfolgreich!";
             header('location: admin.php?page=nutzererstellung_erfolgreich');
         }else{
-            $query = "INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
-					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', 'nutzer', '$passwort')";
-            mysqli_query($db, $query);
+            $stmt = $db->prepare ("INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
+					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', 'nutzer', '$passwort')");
+            if(!$stmt->execute()) {
+                echo "Datenbank-Fehler ";
+                $error = $stmt->errorInfo();
+                print_r($error);
+                die();
+            }
 
             // id vom registrieten Nutzer holen
-            $eingeloggte_nutzer_id = mysqli_insert_id($db);
+            $eingeloggte_nutzer_id = $db -> lastInsertId();
+
 
             $_SESSION['nutzer'] = getUserById($eingeloggte_nutzer_id); // mache eingeloggten User in Session
             $_SESSION['erfolgreich']  = "Du bist erfolgreich registriert";
-            header('location: ../../index.php');
+            header('location: ../../index.php?page=register_erfolgreich');
         }
     }
 }
@@ -95,17 +107,16 @@ function register(){
 //Benutzer Array von ihrer ID zurückgeben
 function getUserById($id){
     global $db;
-    $query = "SELECT * FROM benutzer WHERE id=" . $id;
-    $result = mysqli_query($db, $query);
+    $stmt = $db->prepare ("SELECT * FROM benutzer WHERE id=" . $id);
+    if(!$stmt->execute()) {
+        echo "Datenbank-Fehler ";
+        $error = $stmt->errorInfo();
+        print_r($error);
+        die();
+    }
 
-    $nutzer = mysqli_fetch_assoc($result);
+    $nutzer = $stmt->fetch(PDO::FETCH_ASSOC);
     return $nutzer;
-}
-
-// escape string
-function e($val){
-    global $db;
-    return mysqli_real_escape_string($db, trim($val));
 }
 
 function display_error() {        //Bei nicht korrekter Ausfüllung kommt Fehlermeldung (auf diese Funktion wird in register.php zugegriffen)
@@ -124,7 +135,7 @@ function display_error() {        //Bei nicht korrekter Ausfüllung kommt Fehler
 
 //______________________________________________________________________________________________________________________
 
-//erst zugriff wenn man eingeloggt ist
+// Erst Zugriff, wenn man eingeloggt ist
 function isLoggedIn()
 {
     if (isset($_SESSION['nutzer'])) {
@@ -147,27 +158,33 @@ function login(){           //rufe Funktion Login auf
     global $db, $email, $errors;
 
     // Werte aus dem Formular erfassen
-    $email = e($_POST['email']);                //e = veraltet, Abkürzung für echo?
-    $passwort = e($_POST['passwort']);
+    $email = ($_POST['email']);
+    $passwort = ($_POST['passwort']);
 
     // Vergewisserung, dass Formular richtig ausgefüllt ist --> Fehlermeldung
     if (empty($email)) {
-        array_push($errors, "<p style='color: red; text-align: center;'>Email wird benötigt</p>");     //Die push Methode fügt Werte an das Ende eines Arrays an.
+        array_push($errors, "<div style='color: red; text-align: center;'>Email wird benötigt</div>");     //Die push Methode fügt Werte an das Ende eines Arrays an.
     }                                                   // $errors oben als leeres array() definiert
     if (empty($passwort)) {
-        array_push($errors, "<p style='color: red; text-align: center;'>Passwort wird benötigt</p>");
+        array_push($errors, "<div style='color: red; text-align: center;'>Passwort wird benötigt</div>");
     }
 
     //Versuch Login, wenn keine Fehler im Formular
     if (count($errors) == 0) {                  //wenn er keine errors zählt, verschlüssle passwort mit md5
         $passwort = md5($passwort);
 
-        $query = "SELECT * FROM benutzer WHERE email='$email' AND psw='$passwort' LIMIT 1";  //LIMIT muss 1 sein, damit es nur ein Elementt wählt, da für WHERE ...AND... mehrere Elemente in Frage kämen
-        $results = mysqli_query($db, $query);           //$results liefert Ergebnismenge  //Die Funktion mysqli_query () führt eine Abfrage für die Datenbank durch.
+        $stmt = $db->prepare ("SELECT * FROM benutzer WHERE email='$email' AND psw='$passwort' LIMIT 1");  //LIMIT muss 1 sein, damit es nur ein Elementt wählt, da für WHERE ...AND... mehrere Elemente in Frage kämen
+        //$results = $db->query($stmt);
+        if(!$stmt->execute()) {
+            echo "Datenbank-Fehler ";
+            $error = $stmt->errorInfo();
+            print_r($error);
+            die();
+        }           //$results liefert Ergebnismenge  //Die Funktion mysqli_query () führt eine Abfrage für die Datenbank durch.
 
-        if (mysqli_num_rows($results) == 1) { //wenn Nutzer gefunden wurde   //Die Funktion mysqli_num_rows () gibt die Anzahl der Zeilen in einer Ergebnismenge zurück
+        if (count($stmt) == 1) { //wenn Nutzer gefunden wurde   //Die Funktion mysqli_num_rows () gibt die Anzahl der Zeilen in einer Ergebnismenge zurück
             // Prüfen ob Admin oder Nutzer
-            $eingeloggter_nutzer = mysqli_fetch_assoc($results);        //Die Funktion mysqli_fetch_assoc () ruft eine Ergebniszeile als assoziatives Array ab.
+            $eingeloggter_nutzer = $stmt->fetch(PDO::FETCH_ASSOC);        //Die Funktion mysqli_fetch_assoc () ruft eine Ergebniszeile als assoziatives Array ab.
             if ($eingeloggter_nutzer ['nutzer_typ'] == 'admin') {
 
                 $_SESSION['nutzer'] = $eingeloggter_nutzer;        //Wenn der eingeloggte Nutzer ein Admin ist, wird er nach Login in Adminbreeich geleitet
