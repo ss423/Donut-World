@@ -1,10 +1,10 @@
 <?php
-include 'warenkorb.php';  // warenkorb klasse starten
+include 'warenkorb.php';  //warenkorb klasse starten
 $warenkorb = new warenkorb;  //erzeugt neues Objekt "Warebnkorb"
 
 include '../../config.php';
 
-
+//Warenkorb updaten und löschen
 if(isset($_GET['action'])) {
     if ($_GET['action'] == 'update_warenkorbartikel') {
         $artikel_daten = array(
@@ -22,36 +22,37 @@ if(isset($_GET['action'])) {
     }
 }
 
+//Artikel in den Warenkorb einfügen
 if(isset($_POST['warenkorb'])){
-    $artikel_id = $_POST['artikel_id'];  //für artikel_id wird die jeweilige $row["id"] des donuts übergeben
+    $artikel_id = $_POST['artikel_id'];
     //Produktdetails abfragen
-    $stmt = $db->prepare("SELECT * FROM artikel WHERE id = ".$artikel_id); //alle Infos des Artikels mit der jeweiligen id rauslesen
+    $stmt = $db->prepare("SELECT * FROM artikel WHERE id = ".$artikel_id); //Artikelinfos abfragen
     if(!$stmt->execute()) {
         echo "Datenbank-Fehler ";
         $arr = $stmt->errorInfo();
         print_r($arr);
         die();
     }
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {    //gibt ein array indiziert mit dem jeweiligen spaltennamen raus
-        $artikel_daten = array(         //Infos mit row rauslesen und dem array übergeben
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $artikel_daten = array(
             'id' => $row['id'],
             'donutname' => $row['donutname'],
             'preis' => $row['preis'],
-            'menge' => $_POST['mengenangabe'],       //menge wird über post von vorheriger seite reingezogen
+            'menge' => $_POST['mengenangabe'],
             'ean' => $row['ean'],
             'beschreibung' => $row['beschreibung'],
             'ende' => $row['ende']
         );
     }
-    $artikel_einfuegen = $warenkorb->einfuegen($artikel_daten);    //aufruf der methode "einfuegen" um die artkel daten in das objekt "wsrenkorb" einzufügen
-    $weiterleiten = $artikel_einfuegen?'../../index.php?page=warenkorbansicht':'../../index.php?page=alledonuts';  //wenn artikel_eingefuegen TRUE , dann warenkorbansicht sonst bei FALSE alledonuts
+    $artikel_einfuegen = $warenkorb->einfuegen($artikel_daten);
+    $weiterleiten = $artikel_einfuegen?'../../index.php?page=warenkorbansicht':'../../index.php?page=alledonuts';
     header("Location: ".$weiterleiten);
 }else{
     header("Location: ../../index.php?page=alledonuts");
 }
 
 
-if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_SESSION['nutzer']['id'])){  //bestellung aufgeben, wenn warenkorb nicht leer ist und mit nutzer id
+if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_SESSION['nutzer']['id'])){
     $bezahlmethode=($_POST['zahlungsinfo']);
         // bestelldaten in DB eintragen
     $bestellung_einfuegen = $db->prepare("INSERT INTO bestellungen (benutzer_id, bezahlmethode, endpreis, erstellt, bearbeitet) VALUES (:benutzer_id, :bezahlmethode, :endpreis, :erstellt, :bearbeitet)");
@@ -68,10 +69,9 @@ if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_S
         print_r($arr);
         die();
     }
-    // wenn bestelldaten eingefügt wurden, artikel daten einfügen
+    //wenn Bestelldaten eingefügt wurden, Artikel daten einfügen
     if ($bestellung_einfuegen) {
-        $bestellungen_id = $db->lastInsertId();  //gibt zuletzt hinzugefügte id der bestellung aus (die wurde durch auto increment vorher vergeben)
-        $sql = '';
+        $bestellungen_id = $db->lastInsertId();
 
         $warenkorb_artikel = $warenkorb->inhalte();
         foreach ($warenkorb_artikel as $artikel) {

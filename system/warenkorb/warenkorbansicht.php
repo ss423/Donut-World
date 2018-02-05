@@ -1,8 +1,9 @@
 <body>
 <script>
-    function update_warenkorbartikel(obj,id){       //holt sich mit $.get die daten von der warenkorbaktionen wenn action update_warenkorbartikel ausgeführt wird
+    //Javascript Funktion zum Reload der Seite, wenn updaten erfolgreich
+    function update_warenkorbartikel(obj,id){
         $.get("system/warenkorb/warenkorbaktionen.php", {action:"update_warenkorbartikel", id:id, menge:obj.value}, function(daten){
-            if(daten == 'ok'){     //wenn die daten 'ok' sind reloade die seite, ansonsten die fehlermeldung
+            if(daten == 'ok'){
                 location.reload();
             }else{
                 alert('Aktualisieren des Warenkorbs fehlgeschlagen, bitte versuche es erneut.');
@@ -41,16 +42,16 @@
 <br>
 
 <?php
-if($warenkorb->artikel_gesamt() > 0){     //wenn gesammte artikel ausgegeben werden und die mehr als 0 sind mach weiter
+if($warenkorb->artikel_gesamt() > 0){
 
-    $warenkorb_artikel = $warenkorb->inhalte();      //Warenkoarbartikel auslesen und und in reihenfolge neuster zuerst (siehe warenkorb.php) einfügen
-    foreach($warenkorb_artikel as $artikel){     //jeder eintarg des arrays wird druchlaufen und in $artikel gespeichert
+    $warenkorb_artikel = $warenkorb->inhalte();
+    foreach($warenkorb_artikel as $artikel){
         ?>
         <div class="row">
             <div class="col-sm-3">
                 <?php
                 echo"
-        <img class='img-responsive' src='bilder/".$artikel['ean'].".".$artikel['ende']."' width='70%' alt='Bild: ".$artikel['donutname']."' title='".$artikelt['donutname']."'>   ";?>      <!-- Bild auslesen -->
+        <img class='img-responsive' src='bilder/".$artikel['ean'].".".$artikel['ende']."' width='70%' alt='Bild: ".$artikel['donutname']."' title='".$artikelt['donutname']."'>   ";?>
             </div>
             <div class="col-sm-6">
                 <?php echo "<h3>".$artikel["donutname"]."</h3><br>"; ?>
@@ -61,7 +62,7 @@ if($warenkorb->artikel_gesamt() > 0){     //wenn gesammte artikel ausgegeben wer
                 <?php echo '<br>'.$artikel["preis"].' €'; ?>
             </div>
             <div class="col-sm-1"><br>
-                <input type="number" class="form-control text-center" value="<?php echo $artikel["menge"]; ?>" onchange="update_warenkorbartikel(this, '<?php echo $artikel["rowid"]; ?>')">   <!--wenns geändert wird, wird javacript ausgeführt-->
+                <input type="number" class="form-control text-center" value="<?php echo $artikel["menge"]; ?>" onchange="update_warenkorbartikel(this, '<?php echo $artikel["rowid"]; ?>')">
             </div>
             <div class="col-sm-1"><br>
                 <?php echo $artikel["summepreis"].' €'; ?>
@@ -80,7 +81,7 @@ if($warenkorb->artikel_gesamt() > 0){     //wenn gesammte artikel ausgegeben wer
         <b>Summe:</b>
     </div>
     <div class="col-sm-1">
-        <?php if($warenkorb->artikel_gesamt() > 0){ ?>   <!--wenn gesammte artikel ausgegeben werden und die mehr als 0 sind dann gibt gesammtpreis aus-->
+        <?php if($warenkorb->artikel_gesamt() > 0){ ?>
             <?php echo $warenkorb->gesamt().' €'; ?>
         <?php } ?>
     </div>

@@ -1,5 +1,5 @@
 <?php
-//erst wenn man eingelogt ist hat man zugriff auf kasse
+//erst Zugriff, wenn man eingeloggt ist
 if (!isset($_SESSION['nutzer'])) {
     echo "<br><h4>Du musst dich erst <a href=system/account/login.php style='color: grey;'>einloggen</a>!</h4>
             <br><br><br><br><br><br><br><br>";}
@@ -13,7 +13,7 @@ if($warenkorb->artikel_gesamt() <= 0){
 }
 
 
-$nutzer_id=$_SESSION['nutzer']['id'];           //UNSERE EIGENE NUTZER ID NEHMEN
+$nutzer_id=$_SESSION['nutzer']['id'];
 
 $stmt = $db->prepare("SELECT * FROM benutzer WHERE id ='".$nutzer_id."'");
     if(!$stmt->execute()) {
