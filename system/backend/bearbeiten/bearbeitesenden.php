@@ -23,7 +23,7 @@ if (!empty($donutname) && !empty($beschreibung) && !empty($fuellung) && !empty($
             $filename = $_POST["ean"]; //Dateiname wird EAN Nummer gleichgesetzt
             $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
 
-            $allowed_extensions = array('jpg','png','jpeg','gif'); //nur jpg bilder werden angenommen
+            $allowed_extensions = array('jpg','png','jpeg','gif'); //nur jpg, ... bilder werden angenommen
             if (!in_array($extension, $allowed_extensions)) {   //wenn die Dateiendung nicht jpg ist
                 die("Ungültige Dateiendung. Es sind nur png, jpg, jpeg und gif-Dateien erlaubt!");
             }
@@ -34,7 +34,9 @@ if (!empty($donutname) && !empty($beschreibung) && !empty($fuellung) && !empty($
 
             move_uploaded_file($_FILES['datei']['tmp_name'], $new_path); //speicherung
         }
-
+        if ($extension==''){
+            $extension=$_POST['ende'];
+        }
         $stmt = $db->prepare(
             "UPDATE artikel SET donutname=:donutname, beschreibung=:beschreibung, fuellung=:fuellung, /*platzhalter*/
             ean=:ean, preis=:preis, ende=:ende WHERE id=:id");

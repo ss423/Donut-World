@@ -28,6 +28,7 @@ echo "
         </div>
         <div class='col-sm-7'>
             <img src='../../bilder/".$zeile->ean.".".$zeile->ende."' width='20%' class='img-responsive' alt='Bild: ".$zeile->donutname."' title='".$zeile->donutname."'>
+            <input type='hidden' name='ende'value='".$zeile->ende."'>
             <input type='file' name='datei' id='datei'>
         </div>    
         <div class='col-sm-1'>
