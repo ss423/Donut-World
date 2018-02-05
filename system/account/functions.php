@@ -73,7 +73,19 @@ function register(){
         if (isset($_POST['nutzer_typ'])) {
             $nutzer_typ = ($_POST['nutzer_typ']);
             $stmt = $db->prepare ("INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
-					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', '$nutzer_typ', '$passwort')");
+					  VALUES(':vorname', ':nachname', ':straße', ':hausnummer', ':plz', ':ort', ':email', ':nutzer_typ', ':passwort')");
+            $stmt->bindParam(":vorname", $vorname);
+            $stmt->bindParam(":nachname", $nachname);
+            $stmt->bindParam(":straße", $straße);
+            $stmt->bindParam(":hausnummer", $hausnummer);
+            $stmt->bindParam(":plz", $plz);
+            $stmt->bindParam(":ort", $ort);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":nutzer_typ", $nutzer_typ);
+            $stmt->bindParam(":psw", $passwort);
+
+
+
             if(!$stmt->execute()) {
                 echo "Datenbank-Fehler ";
                 $error = $stmt->errorInfo();
@@ -83,8 +95,18 @@ function register(){
             $_SESSION['erfolgreich']  = "Die Registrierung war erfolgreich!";
             header('location: admin.php?page=nutzererstellung_erfolgreich');
         }else{
+            $nutzer_typ = "nutzer";
             $stmt = $db->prepare ("INSERT INTO benutzer (vorname, nachname, straße, hausnummer, plz, ort, email, nutzer_typ, psw) 
-					  VALUES('$vorname', '$nachname', '$straße', '$hausnummer', '$plz', '$ort', '$email', 'nutzer', '$passwort')");
+					  VALUES(':vorname', ':nachname', ':straße', ':hausnummer', ':plz', ':ort', ':email', ':nutzer_typ', ':passwort')");
+            $stmt->bindParam(":vorname", $vorname);
+            $stmt->bindParam(":nachname", $nachname);
+            $stmt->bindParam(":straße", $straße);
+            $stmt->bindParam(":hausnummer", $hausnummer);
+            $stmt->bindParam(":plz", $plz);
+            $stmt->bindParam(":ort", $ort);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":nutzer_typ", $nutzer_typ);
+            $stmt->bindParam(":psw", $passwort);
             if(!$stmt->execute()) {
                 echo "Datenbank-Fehler ";
                 $error = $stmt->errorInfo();
