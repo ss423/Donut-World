@@ -29,7 +29,7 @@ echo"
     </div>
     <div class='row'>
         <div class='col-sm-1'>
-            <a href='index.php'> <!--Klick auf Logo führt zur Index -->
+            <a href='index.php'>
                 <img src='bilder/logo.png' alt='Logo' width='70%' id='logo' title='Donut World Startseite' alt='Logo Donut World'/>
             </a>
         </div>
@@ -98,7 +98,6 @@ echo"
                     <div id='mengegesamt'>
                     ";
                         if($warenkorb->artikel_gesamt() > 0){
-                            //get cart items from session
                             $warenkorb_artikel = $warenkorb->inhalte();
                             foreach($warenkorb_artikel as $artikel) {
                                 $mengegesamt += $artikel["menge"];
@@ -135,16 +134,16 @@ echo"
             </div>
         
             <script>
-                $('#warenkorbmenge').hide();        //Artikel im warenkorb sind zuerst weg & erscheinend beim hover
+                $('#warenkorbmenge').hide();        //Artikel im warenkorb erscheint beim Hover
                 $('#warenkorbvoll').hover(function(){
                     $('#warenkorbmenge').toggle();
                 })
                 
-                $('#warenkorbvoll').hover(function(){ //Mengenangabe verschwindet bei draufgehen
+                $('#warenkorbvoll').hover(function(){ //Mengenangabe verschwinden beim Hover
                     $('#mengegesamt').toggle();
                 })
                 
-                $('#warenkorbleer').hide();        //Artikel im warenkorb sind zuerst weg & erscheinend beim hover
+                $('#warenkorbleer').hide();        //Warenkorb Leer bei Hover
                 $('#warenkorb').hover(function(){
                     $('#warenkorbleer').toggle();
                 })

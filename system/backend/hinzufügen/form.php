@@ -8,9 +8,9 @@ echo "
     </div>
 <br><br>
 
-<div id='neu'>    <!-- Produktformular um Produkt hinzuzufügen -->
+<div id='neu'>
     <form name='uploadformular' action='hinzufügen/hinzufügen.php' method='post'   
-        enctype='multipart/form-data'> <!--da bild auch hinzugefügt werden kann -->
+        enctype='multipart/form-data'> 
         
         <div class='row'>
             <div class='col-sm-2'>

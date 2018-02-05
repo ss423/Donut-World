@@ -3,7 +3,7 @@
 
 try {
     include "../../config.php";
-    $stmt = $db->prepare("SELECT * FROM artikel WHERE id=".$_GET["id"]); /*id über get übergeben */
+    $stmt = $db->prepare("SELECT * FROM artikel WHERE id=".$_GET["id"]);
     $stmt->execute();
     if ($zeile = $stmt->fetchObject()) {    //Artikel auslesen
 
@@ -15,7 +15,7 @@ echo "
     </div>
 <br><br>
               
-<form action='admin.php?page=bearbeitesenden' method='post' enctype='multipart/form-data'> <!-- Action bearbeiten senden aufgerufen & parameter mit Post übergeben -->
+<form action='admin.php?page=bearbeitesenden' method='post' enctype='multipart/form-data'>
     <input type='hidden' name='id' value='$zeile->id' />
     
     <div class='row'>

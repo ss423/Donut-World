@@ -7,7 +7,7 @@ if (!empty($_POST["donutname"]) AND !empty($_POST["beschreibung"]) AND !empty($_
     }
 
     if ($_FILES["datei"]["size"] != 0) {
-//Bild upload:
+
         $upload_folder = '/home/ss423/public_html/bilder/'; //Upload-Verzeichnis
         $filename = $_POST["ean"];
         $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
@@ -18,8 +18,6 @@ if (!empty($_POST["donutname"]) AND !empty($_POST["beschreibung"]) AND !empty($_
         }
 
         $new_path = $upload_folder . $filename . '.' . $extension;
-
-        $dbfile = $filename . '.' . $extension;
 
         move_uploaded_file($_FILES['datei']['tmp_name'], $new_path);
     }

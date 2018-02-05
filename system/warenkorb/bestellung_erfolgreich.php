@@ -105,7 +105,7 @@ echo"
 </html>";
 $email_to = $emailempf;     //Email empfänger
 
-$email_subject = "Ihre Bestellbestaetigung von Donut World: \n";   //was beim betreff der email steht
+$email_subject = "Ihre Bestellbestaetigung von Donut World: \n";   //Betreff Email
 
 
 $email_message='';
@@ -113,6 +113,6 @@ $email_message.="Sie haben folgende Donut/-s am ".$datum." bestellt: \n";
 $email_message.=$artikel."\n";
 $email_message.=$endpreis."\n";
 
-$headers = 'From: '.$emailempf."\r\n".          //Email Header mit Emailadresse absender
+$headers = 'From: '.$emailempf."\r\n".
 
     @mail($email_to, $email_subject, $email_message, $headers);

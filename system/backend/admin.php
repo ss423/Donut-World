@@ -37,12 +37,11 @@ if (isset($_GET['logout'])) {
 
     <div class='row'>
         <div class='col-sm-1'>
-            <a href='../../index.php'> <!--Wenn man auf das Logo klickt wird man auf die Index Seite weitergeleitet -->
+            <a href='../../index.php'>
                 <img class='img-responsive' src='../../bilder/logo.png' alt='Logo Donut World' width='70%px' id='logo'/>
             </a>
         </div>
 
-        <!-- notification message -->
         <?php if (isset($_SESSION['erfolgreich'])) : ?>
             <div class="error erfolgreich" >
                 <h3>
@@ -54,7 +53,6 @@ if (isset($_GET['logout'])) {
             </div>
         <?php endif ?>
 
-        <!-- logged in user information -->
         <div class='col-sm-10'>
             <div class="row">
                 <div class="col-sm-12">
