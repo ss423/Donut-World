@@ -403,7 +403,7 @@ label {text-align: left;}
     border-color: lightpink;
     height: auto;
     width: 60em;
-    position: absolute;
+    position: relative;
     background-color: white;
     -webkit-box-shadow: 0 2px 2px #888}
 .registereingabe{
