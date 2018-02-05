@@ -4,21 +4,21 @@ $email = htmlspecialchars($_POST["email"], ENT_QUOTES, "UTF-8");
 $nachricht = htmlspecialchars($_POST["nachricht"], ENT_QUOTES, "UTF-8");
 
 
-if(isset($_POST['email'])) {    //wenn beim Formular auf submit gedrückt wurde
+if(isset($_POST['email'])) {
 
     $email_to = "saskia.spieth@gmx.de";     //Email empfänger
 
-    $email_subject = "Sie haben eine neue Nachricht von Donutworld:";   //was beim betreff der email steht
+    $email_subject = "Sie haben eine neue Nachricht von Donutworld:";   //Betreff der E-Mail
 
 
-    if(empty($betreff) && empty($email) && empty($nachricht))   //wenn Felder Betreff, Email, Nachricht nicht ausgefüllt sind
+    if(empty($betreff) && empty($email) && empty($nachricht))
     {
 
         'Bitte füllen Sie alle Felder aus und probieren Sie es noch einmal';
 
     }
 
-    $betreff = $_POST['betreff'];       //Variablen werden durch Post Befehl eingebunden
+    $betreff = $_POST['betreff'];
 
     $email = $_POST['email'];
 
@@ -27,17 +27,17 @@ if(isset($_POST['email'])) {    //wenn beim Formular auf submit gedrückt wurde
     $email_message = "Neue Nachricht von Donutworld.\n\n";
 
 
-    $email_message .= "E-Mail Adresse: ".$email."\n"; //Emailadresse wird an Nachricht gehangen
+    $email_message .= "E-Mail Adresse: ".$email."\n";
 
-    $email_message .= "Betreff : ".$betreff."\n"; //Betreff
+    $email_message .= "Betreff : ".$betreff."\n";
 
-    $email_message .= "Nachricht: ".$nachricht."\n";  //Nachricht
-
-
-    $headers = 'From: '.$email."\r\n".          //Email Header mit Emailadresse absenders
+    $email_message .= "Nachricht: ".$nachricht."\n";
 
 
-        @mail($email_to, $email_subject, $email_message, $headers); //verschickt mail
+    $headers = 'From: '.$email."\r\n".
+
+
+        @mail($email_to, $email_subject, $email_message, $headers);
 
     ?>
     <div class="row">

@@ -13,7 +13,7 @@ echo "
 ";
 
 include_once ("../../config.php");
-$stmt = $db->prepare("SELECT * FROM artikel");      //DB Verbindung herstellen & alles von artikel auslesen
+$stmt = $db->prepare("SELECT * FROM artikel");
 
 if(!$stmt->execute()) {
     echo "Datenbank-Fehler ";
@@ -34,7 +34,7 @@ echo"
 ";
 
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { //einzelne ELemente pro Artikel auslesen
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $id = $row["id"];
     echo "<div class='row'>
             <div class='col-sm-12'>
@@ -53,7 +53,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { //einzelne ELemente pro Artikel 
                 <h4>Preis: </h4> " . $row["preis"] . "€ <br>
                 <br><br>
                 <a href='admin.php?page=bearbeiten&id=" . $id . "' id='bearbeiten'><button class='bearbeitenbutton'>bearbeiten</button></a>";
-    /*braucht switch funktion für id übertragung*/
+
     echo "      <a href='admin.php?page=loeschen&id=" . $id . "' id='löschen'><button class='loeschenbutton'>löschen</button></a>
             </div>
           </div>";

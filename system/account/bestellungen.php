@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$nachname=$_SESSION["nutzer"]["nachname"]; //rauslesen Nutzer Nachname
+$nachname=$_SESSION["nutzer"]["nachname"];
 
 echo"
 <div class='row'>
@@ -22,7 +22,7 @@ echo "
         Name:<br>
         Adresse:<br>
     </div>
-    <div class='col-sm-10'>";    //Nutzerangaben (Adresse)
+    <div class='col-sm-10'>";
 echo $_SESSION["nutzer"]["vorname"] . " " .$_SESSION["nutzer"]["nachname"]. "<br>";
 echo $_SESSION["nutzer"]["straße"] . " " .$_SESSION["nutzer"]["hausnummer"]. "<br>" . $_SESSION["nutzer"]["plz"]. " " . $_SESSION["nutzer"]["ort"];
 echo "</div></div>";

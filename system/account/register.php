@@ -51,7 +51,7 @@
 
             <form method='post' action='register.php'>
 
-                <?php echo display_error(); ?>       <!-- Bei nicht korrekter Ausfüllung kommt Fehlermeldung (diese Funktion ist in functions.php definiert)-->
+                <?php echo display_error(); ?>
 
             <div class='registereingabe'>
                 <div class="row">

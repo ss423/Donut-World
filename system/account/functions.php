@@ -2,7 +2,6 @@
 
 session_start();
 
-// Datenbankverbindung einbinden
 include '../../config.php';
 
 // Definition Variablen
@@ -15,18 +14,16 @@ $ort        = "";
 $email      = "";
 $errors     = array();
 
-// Registrier-Funktion wird aufgerufen, wenn Registrieren Button geklickt wird
+
 if (isset($_POST['register_btn'])) {
     register();
 }
 
 // NUTZER REGISTRIERUNG
 function register(){
-    //Diese Variablen werden mit dem global Keywort aufgerufen um sie in der Funktion verfügbar zu machen
+
     global $db, $errors, $vorname, $nachname, $straße, $hausnummer, $plz, $ort, $email;
 
-    //empfange alle Eingabewerte aus dem Formular. Ruft die e () -Funktion auf.
-    // unten definiert, um Formularwerte zu umgehen
     $vorname     =  ($_POST['vorname']);
     $nachname    =  ($_POST['nachname']);
     $straße      =  ($_POST['straße']);
@@ -37,7 +34,7 @@ function register(){
     $passwort_1  =  ($_POST['psw_1']);
     $passwort_2  =  ($_POST['psw_2']);
 
-// Sicherstellung ob alles korrekt ausgefüllt ist
+// Prüfung Korrektheit der Eingaben
     if (empty($vorname)) {
         array_push($errors, "Vorname wird benötigt");
     }
@@ -66,9 +63,9 @@ function register(){
         array_push($errors, "Die Passwörter stimmen nicht über ein");
     }
 
-// Nutzer Registrieren wenn keine Fehler im Formular sind
+// Nutzer Registrieren wenn fehlerfrei
     if (count($errors) == 0) {
-        $passwort = md5($passwort_1);//Passwort wird verschlüsselt bevor es in der Datenbank angelegt wird
+        $passwort = md5($passwort_1);       //Passwortverschlüsselung
 
         if (isset($_POST['nutzer_typ'])) {
             $nutzer_typ = ($_POST['nutzer_typ']);
@@ -92,18 +89,16 @@ function register(){
                 die();
             }
 
-            // id vom registrieten Nutzer holen
             $eingeloggte_nutzer_id = $db -> lastInsertId();
 
-
-            $_SESSION['nutzer'] = getUserById($eingeloggte_nutzer_id); // mache eingeloggten User in Session
+            $_SESSION['nutzer'] = getUserById($eingeloggte_nutzer_id);
             $_SESSION['erfolgreich']  = "Du bist erfolgreich registriert";
             header('location: ../../index.php?page=register_erfolgreich');
         }
     }
 }
 
-//Benutzer Array von ihrer ID zurückgeben
+// Automatisches Einloggen nach Registrierung
 function getUserById($id){
     global $db;
     $stmt = $db->prepare ("SELECT * FROM benutzer WHERE id=" . $id);
@@ -118,7 +113,9 @@ function getUserById($id){
     return $nutzer;
 }
 
-function display_error() {        //Bei nicht korrekter Ausfüllung kommt Fehlermeldung (auf diese Funktion wird in register.php zugegriffen)
+
+// Fehlermeldung
+function display_error() {
 
     global $errors;
 
@@ -147,62 +144,61 @@ function isLoggedIn()
 //________________________________________________________________________________________________________________________
 
 
-// Funktionen fürs Login
-if (isset($_POST['login_btn'])) {          //Prüfung ob Variable existiert -> Übergabe des Loginbuttons mit der Methode Post
-    login();                                // Wenn man auf Login Button klickt, führe Funktion login() aus.
+
+if (isset($_POST['login_btn'])) {
+    login();
 }
 
 // LOGIN
-function login(){           //rufe Funktion Login auf
+function login(){
     global $db, $email, $errors;
 
-    // Werte aus dem Formular erfassen
     $email = ($_POST['email']);
     $passwort = ($_POST['passwort']);
 
-    // Vergewisserung, dass Formular richtig ausgefüllt ist --> Fehlermeldung
+    // Prüfung Korrektheit der Eingaben
     if (empty($email)) {
-        array_push($errors, "<div style='color: red; text-align: center;'>Email wird benötigt</div>");     //Die push Methode fügt Werte an das Ende eines Arrays an.
-    }                                                   // $errors oben als leeres array() definiert
+        array_push($errors, "<div style='color: red; text-align: center;'>Email wird benötigt</div>");
+    }
     if (empty($passwort)) {
         array_push($errors, "<div style='color: red; text-align: center;'>Passwort wird benötigt</div>");
     }
 
-    //Versuch Login, wenn keine Fehler im Formular
-    if (count($errors) == 0) {                  //wenn er keine errors zählt, verschlüssle passwort mit md5
+    // Nutzer Login wenn fehlerfrei
+    if (count($errors) == 0) {
         $passwort = md5($passwort);
 
-        $stmt = $db->prepare ("SELECT * FROM benutzer WHERE email='$email' AND psw='$passwort' LIMIT 1");  //LIMIT muss 1 sein, damit es nur ein Elementt wählt, da für WHERE ...AND... mehrere Elemente in Frage kämen
-        //$results = $db->query($stmt);
+        $stmt = $db->prepare ("SELECT * FROM benutzer WHERE email='$email' AND psw='$passwort' LIMIT 1");
+
         if(!$stmt->execute()) {
             echo "Datenbank-Fehler ";
             $error = $stmt->errorInfo();
             print_r($error);
             die();
-        }           //$results liefert Ergebnismenge  //Die Funktion mysqli_query () führt eine Abfrage für die Datenbank durch.
+        }
 
-        if (count($stmt) == 1) { //wenn Nutzer gefunden wurde   //Die Funktion mysqli_num_rows () gibt die Anzahl der Zeilen in einer Ergebnismenge zurück
+        if (count($stmt) == 1) {
             // Prüfen ob Admin oder Nutzer
-            $eingeloggter_nutzer = $stmt->fetch(PDO::FETCH_ASSOC);        //Die Funktion mysqli_fetch_assoc () ruft eine Ergebniszeile als assoziatives Array ab.
+            $eingeloggter_nutzer = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($eingeloggter_nutzer ['nutzer_typ'] == 'admin') {
 
-                $_SESSION['nutzer'] = $eingeloggter_nutzer;        //Wenn der eingeloggte Nutzer ein Admin ist, wird er nach Login in Adminbreeich geleitet
+                $_SESSION['nutzer'] = $eingeloggter_nutzer;
                 header('location: ../backend/admin.php');
             }else{
-                $_SESSION['nutzer'] = $eingeloggter_nutzer;     //wemm es nutzer ist, wird er auf die index im frontend geleitet
+                $_SESSION['nutzer'] = $eingeloggter_nutzer;
                 $_SESSION['erfolgreich']  = "Du bist jetzt eingeloggt";
 
                 header('location: ../../index.php');
             }
         }else {
-            array_push($errors, "<p style='color: red;'>Email oder Passwort falsch</p>");      //wenn Errors gezählt wurden, dann kommt Meldung
+            array_push($errors, "<p style='color: red;'>Email oder Passwort falsch</p>");
         }
     }
 }
 
 //______________________________________________________________________________________________________________________
 
-// Admin Funktion
+// Zugriff, wenn man Admin ist
 function isAdmin()
 {
     if (isset($_SESSION['nutzer']) && $_SESSION['nutzer']['nutzer_typ'] == 'admin' ) {

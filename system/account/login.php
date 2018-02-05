@@ -21,7 +21,7 @@
 <div class="row">
 	<div class="col-sm-4">
 	</div>
-	<div class="col-sm-3"> <!--Mittlere Spalte in der das Loginformular ist -->
+	<div class="col-sm-3">
 		<div class="loginformular">
 			<div class='accountheader'>
 				<div class="row">
