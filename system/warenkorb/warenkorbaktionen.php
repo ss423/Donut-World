@@ -54,7 +54,14 @@ if(isset($_POST['warenkorb'])){
 if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_SESSION['nutzer']['id'])){  //bestellung aufgeben, wenn warenkorb nicht leer ist und mit nutzer id
     $bezahlmethode=($_POST['zahlungsinfo']);
         // bestelldaten in DB eintragen
-    $bestellung_einfuegen = $db->prepare("INSERT INTO bestellungen (benutzer_id, bezahlmethode, endpreis, erstellt, bearbeitet) VALUES ('" . $_SESSION['nutzer']['id'] . "', '" . $bezahlmethode . "', '" . $warenkorb->gesamt() . "', '" . date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "')");
+    $bestellung_einfuegen = $db->prepare("INSERT INTO bestellungen (benutzer_id, bezahlmethode, endpreis, erstellt, bearbeitet) VALUES (:benutzer_id, :bezahlmethode, :endpreis, :erstellt, :bearbeitet)");
+
+    $bestellung_einfuegen->bindParam(":benutzer_id",$_SESSION['nutzer']['id'] );
+    $bestellung_einfuegen->bindParam(":bezahlmethode",$bezahlmethode );
+    $bestellung_einfuegen->bindParam(":endpreis",$warenkorb->gesamt() );
+    $bestellung_einfuegen->bindParam(":erstellt",date("Y-m-d H:i:s") );
+    $bestellung_einfuegen->bindParam(":bearbeitet",date("Y-m-d H:i:s") );
+
     if(!$bestellung_einfuegen->execute()) {
         echo "Datenbank-Fehler ";
         $arr = $bestellung_einfuegen->errorInfo();
@@ -68,22 +75,25 @@ if(isset($_POST['bestellung']) && $warenkorb->artikel_gesamt() > 0 && !empty($_S
 
         $warenkorb_artikel = $warenkorb->inhalte();
         foreach ($warenkorb_artikel as $artikel) {
-            $sql .= "INSERT INTO bestellte_artikel (id, bestellungen_id, artikel_id, menge) VALUES ('', '" . $bestellungen_id . "', '" . $artikel['id'] . "', '" . $artikel['menge'] . "');";
-        }
-        // bestellte artikel in datenbank einfügen
-        $bestellte_artikel_einfuegen = $db->prepare($sql);
-        if(!$bestellte_artikel_einfuegen->execute()) {
-            echo "Datenbank-Fehler ";
-            $arr = $bestellte_artikel_einfuegen->errorInfo();
-            print_r($arr);
-            die();
-        }
+            $bestellte_artikel_einfuegen = $db->prepare("INSERT INTO bestellte_artikel (bestellungen_id, artikel_id, menge) VALUES (:bestellungen_id, :artikel_id, :menge)");
 
-        if ($bestellte_artikel_einfuegen) {
-            $warenkorb->destroy();
-            header("Location: ../../index.php?page=bestellung_erfolgreich&id=$bestellungen_id");
-        } else {
-            header("Location: ../../index.php?page=zurkasse");
+            $bestellte_artikel_einfuegen->bindParam(":bestellungen_id", $bestellungen_id);
+            $bestellte_artikel_einfuegen->bindParam(":artikel_id", $artikel['id']);
+            $bestellte_artikel_einfuegen->bindParam(":menge", $artikel['menge']);
+
+            if (!$bestellte_artikel_einfuegen->execute()) {
+                echo "Datenbank-Fehler ";
+                $arr = $bestellte_artikel_einfuegen->errorInfo();
+                print_r($arr);
+                die();
+            }
+
+            if ($bestellte_artikel_einfuegen) {
+                $warenkorb->destroy();
+                header("Location: ../../index.php?page=bestellung_erfolgreich&id=$bestellungen_id");
+            } else {
+                header("Location: ../../index.php?page=zurkasse");
+            }
         }
     } else {
         header("Location: ../../index.php?page=zurkasse");
