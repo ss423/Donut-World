@@ -35,7 +35,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <div class='col-sm-4'>
 ";
         $id = $row["id"];
-        echo "<h2>" . $row["donutname"] . $ad . "</h2>";
+        echo "<h2>" . $row["donutname"] ."</h2>";
         echo $row["beschreibung"] . "<br>";
         echo "Füllung: " . $row["fuellung"] . "<br>";
         echo "Preis: " . $row["preis"] . "€<br>";

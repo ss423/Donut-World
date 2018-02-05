@@ -41,9 +41,9 @@ if(isset($_POST['email'])) {    //wenn beim Formular auf submit gedrückt wurde
 
     ?>
     <div class="row">
-        <div class="col-sm-12">
-            <br>Vielen Dank für Ihre Nachricht!<br>
-            Wir werden Ihnen bald schreiben.
+        <div class="col-sm-12" style="text-align: center">
+            <br><h3>Vielen Dank für Ihre Nachricht!</h3>
+            <h3>Wir werden Ihnen bald schreiben.</h3>
         </div>
     </div>
 

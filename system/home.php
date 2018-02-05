@@ -57,7 +57,7 @@ echo "
             <h2>NEU IN DER STADT</h2>
             Nach nur vier Monaten in der Online Welt und vielen kleinen Aufträgen, eröffnen wir nun 
             endlich unser erster Donut Laden im Fluxus in Stuttgart.
-            Wir werden nun für die kommenden 6 Monaten den besten Platz in der Stadt Stuttgart haben.
+            Wir werden nun für die kommenden sechs Monaten den besten Platz in der Stadt Stuttgart haben.
             Nun haben wir die Chance euch von unseren tollen Donuts zu überzeugen!
             Also schaut vorbei und probiert die kleinen Köstlichkeiten.<br>
             Wir freuen uns auf euch!<br>
@@ -80,9 +80,9 @@ echo "
         </div>
         <div class='col-sm-10'>
             <h2>SPECIALS</h2>
-            Kauft 5 Donuts - erhaltet 6!!!<br>
+            Kauft fünf Donuts - erhaltet sechs!!!<br>
             Ab morgen den 02.02.2018 startet unsere Valentins-Aktion!
-            Kommt dazu einfach bei uns im Store vorbei oder schaut in unserem neuen Online-Store, sucht euch sechs Donuts aus und zahl nur fünf Donuts!
+            Kommt dazu einfach bei uns im Store vorbei oder schaut in unserem neuen Online-Store, sucht euch sechs Donuts aus und zahlt nur fünf Donuts!
             Das heißt ihr bekommt einen Donut Gratis!!!
             Der sechste Donut ist ein kleines Valentinsgeschenk an euch!<br>
             Euer Donut World Team wünscht euch eine schöne Valentinszeit!<br>
@@ -106,9 +106,9 @@ echo "
         <div class='col-sm-10'>
             <h2>PRESSE</h2>
             Was 1 Naicer Donut-Spiegel Magazin<br>
-            Was ist den das? So ein kleines Start Up Unternehmen hat schon ein Naicen Magazin?!<br>
-            Ja! Den wir möchten euch über alle neue Donut-Kreationen auf dem Laufenden halten
-             und euch auch über jegliche Inhaltsstoffe und Nährstoffe informieren.
+            Was ist denn das? So ein kleines Start Up Unternehmen hat schon 1 Naices Magazin?!<br>
+            Ja! Denn wir möchten euch über alle neuen Donut-Kreationen auf dem Laufenden halten
+             und euch auch über jegliche <a href='index.php?page=lebensmittelhinweise'>Inhaltsstoffe und Nährstoffe</a> informieren.
              Na, Interesse?! Dann einfach in den nächsten Laden gehen und ein Naices Donut World Magazin kaufen!<br>
              Euer Donut World Team<br>
         </div>
