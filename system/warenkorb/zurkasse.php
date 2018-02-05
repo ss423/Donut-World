@@ -46,7 +46,7 @@ $benutzerRow = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="col-sm-6">
             <h2>Zahlungsinformationen</h2>
             <i>*Bitte Zahlungsart auswählen (Infos finden Sie <a href="index.php?page=versandundzahlung" style="color: grey">hier</a>):</i><br><br>
-            <h4><input  onClick="window.location = 'https://www.paypal.com/de/home/';" type="radio" name="zahlungsinfo" value="PayPal"> PayPal</h4>
+            <h4><input type="radio" name="zahlungsinfo" value="PayPal"><a href="https://www.paypal.com/de/home/"> PayPal</a></h4>
             <h4><input type="radio" name="zahlungsinfo" value="Nachnahme" checked> Nachnahme</h4><br>
         </div>
     </div>
